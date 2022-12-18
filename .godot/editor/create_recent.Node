@@ -1,9 +1,11 @@
+RigidBody3D
+MeshInstance3D
 Node
+WorldEnvironment
+Label
 OpenXRHand
 RayCast3D
 DirectionalLight3D
-WorldEnvironment
-MeshInstance3D
 XRController3D
 XRCamera3D
 XROrigin3D

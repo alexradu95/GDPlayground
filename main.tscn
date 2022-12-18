@@ -1,6 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://b77pnw7bdvg3w"]
+[gd_scene load_steps=13 format=3 uid="uid://b77pnw7bdvg3w"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_qyai8"]
+[ext_resource type="Script" path="res://DirectMovement.gd" id="2_3v56t"]
+[ext_resource type="PackedScene" uid="uid://dwk2iwe8qkvfo" path="res://VRFramework/Controllers/thumbstick_label.tscn" id="3_voqij"]
+[ext_resource type="Script" path="res://RightHand.gd" id="4_f4xca"]
+
+[sub_resource type="Sky" id="Sky_uybxk"]
+
+[sub_resource type="Environment" id="Environment_r01ex"]
+background_mode = 2
+sky = SubResource("Sky_uybxk")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rs7id"]
 albedo_color = Color(0.462745, 0.984314, 0, 1)
@@ -19,14 +28,7 @@ size = Vector3(0.05, 0.05, 0.05)
 [sub_resource type="PlaneMesh" id="PlaneMesh_4wblh"]
 size = Vector2(10, 10)
 
-[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_c4nwh"]
-
-[sub_resource type="Sky" id="Sky_77dp1"]
-sky_material = SubResource("PhysicalSkyMaterial_c4nwh")
-
-[sub_resource type="Environment" id="Environment_32nyt"]
-background_mode = 2
-sky = SubResource("Sky_77dp1")
+[sub_resource type="BoxMesh" id="BoxMesh_78hdv"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_qyai8")
@@ -34,30 +36,43 @@ script = ExtResource("1_qyai8")
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+environment = SubResource("Environment_r01ex")
 
 [node name="RayCast3D" type="RayCast3D" parent="XROrigin3D/XRCamera3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 target_position = Vector3(0, -5, 0)
 
 [node name="LeftHand" type="XRController3D" parent="XROrigin3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.402356, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.220756, 0, 0)
 tracker = &"left_hand"
+script = ExtResource("2_3v56t")
+
+[node name="ThumbstickLabel" parent="XROrigin3D/LeftHand" instance=ExtResource("3_voqij")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftHand"]
 mesh = SubResource("BoxMesh_o3l8e")
 
 [node name="RightHand" type="XRController3D" parent="XROrigin3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.305238, 0, 0)
+transform = Transform3D(0.999992, 0, 0.00397934, 0, 1, 0, -0.00397934, 0, 0.999992, -0.188627, 0, 0)
 tracker = &"right_hand"
+script = ExtResource("4_f4xca")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightHand"]
 mesh = SubResource("BoxMesh_n26ki")
 
-[node name="Floor" type="MeshInstance3D" parent="."]
+[node name="ThumbstickLabel" parent="XROrigin3D/RightHand" instance=ExtResource("3_voqij")]
+
+[node name="World" type="Node" parent="."]
+
+[node name="Floor" type="MeshInstance3D" parent="World"]
 mesh = SubResource("PlaneMesh_4wblh")
+skeleton = NodePath("../..")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_32nyt")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World"]
 transform = Transform3D(1, 0, 0, 0, 0.608678, 0.793417, 0, -0.793417, 0.608678, 0, 4.39489, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.515028, -3.2682)
+mesh = SubResource("BoxMesh_78hdv")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="World/MeshInstance3D"]

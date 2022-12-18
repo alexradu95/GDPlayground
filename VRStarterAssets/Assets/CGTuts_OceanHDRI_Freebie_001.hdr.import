@@ -3,25 +3,27 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bihfxxasdbju4"
-path="res://.godot/imported/CGTuts_OceanHDRI_Freebie_001.hdr-cb27e79492393dae99b9d188353ad249.ctex"
+path.s3tc="res://.godot/imported/CGTuts_OceanHDRI_Freebie_001.hdr-cb27e79492393dae99b9d188353ad249.s3tc.ctex"
+path.etc2="res://.godot/imported/CGTuts_OceanHDRI_Freebie_001.hdr-cb27e79492393dae99b9d188353ad249.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc", "etc2"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://VRStarterAssets/Assets/CGTuts_OceanHDRI_Freebie_001.hdr"
-dest_files=["res://.godot/imported/CGTuts_OceanHDRI_Freebie_001.hdr-cb27e79492393dae99b9d188353ad249.ctex"]
+dest_files=["res://.godot/imported/CGTuts_OceanHDRI_Freebie_001.hdr-cb27e79492393dae99b9d188353ad249.s3tc.ctex", "res://.godot/imported/CGTuts_OceanHDRI_Freebie_001.hdr-cb27e79492393dae99b9d188353ad249.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +33,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
