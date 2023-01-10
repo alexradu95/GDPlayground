@@ -30,4 +30,5 @@ renderer/rendering_method="mobile"
 [xr]
 
 openxr/enabled=true
+openxr/default_action_map="res://VirtualReality/openxr_action_map.tres"
 shaders/enabled=true

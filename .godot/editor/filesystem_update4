@@ -1,3 +1,4 @@
 res://main.tscn
 res://DirectMovement.gd
-res://RightHand.gd
+res://Assets/Characters/Mannequin/mannequiny.tscn
+res://Assets/Characters/Mannequin/mannequiny.gd

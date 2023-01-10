@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwk2iwe8qkvfo"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://ThumbstickDebug.gd" id="1_f0gdv"]
+[ext_resource type="Script" path="res://VirtualReality/ThumbstickDebug.gd" id="1_f0gdv"]
 
 [sub_resource type="TextMesh" id="TextMesh_qempu"]
 add_uv2 = true

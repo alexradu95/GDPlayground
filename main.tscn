@@ -1,15 +1,24 @@
-[gd_scene load_steps=13 format=3 uid="uid://b77pnw7bdvg3w"]
+[gd_scene load_steps=15 format=3 uid="uid://bjndk0qmcg5ne"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_qyai8"]
-[ext_resource type="Script" path="res://DirectMovement.gd" id="2_3v56t"]
-[ext_resource type="PackedScene" uid="uid://dwk2iwe8qkvfo" path="res://VRFramework/Controllers/thumbstick_label.tscn" id="3_voqij"]
-[ext_resource type="Script" path="res://RightHand.gd" id="4_f4xca"]
+[ext_resource type="Script" path="res://VirtualReality/DirectMovement.gd" id="2_hhtqu"]
+[ext_resource type="PackedScene" path="res://VirtualReality/Controllers/thumbstick_label.tscn" id="3_voqij"]
+[ext_resource type="Script" path="res://VirtualReality/RightHand.gd" id="4_dj2bq"]
+[ext_resource type="PackedScene" uid="uid://cr6l7lhloe0kt" path="res://Assets/Characters/Mannequin/mannequiny.tscn" id="5_fm5ow"]
 
-[sub_resource type="Sky" id="Sky_uybxk"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6cyxo"]
+sky_top_color = Color(0.0196078, 0.478431, 0.976471, 1)
+sky_horizon_color = Color(0.512745, 0.696078, 0.754902, 1)
+ground_bottom_color = Color(0.0313726, 0.305882, 0.0431373, 1)
+ground_horizon_color = Color(0.512745, 0.696078, 0.754902, 1)
 
-[sub_resource type="Environment" id="Environment_r01ex"]
+[sub_resource type="Sky" id="Sky_dsth1"]
+sky_material = SubResource("ProceduralSkyMaterial_6cyxo")
+
+[sub_resource type="Environment" id="Environment_sndxo"]
 background_mode = 2
-sky = SubResource("Sky_uybxk")
+sky = SubResource("Sky_dsth1")
+sdfgi_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rs7id"]
 albedo_color = Color(0.462745, 0.984314, 0, 1)
@@ -33,10 +42,19 @@ size = Vector2(10, 10)
 [node name="Main" type="Node3D"]
 script = ExtResource("1_qyai8")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sndxo")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.696831, -0.62034, 0.360007, 0.148447, 0.615808, 0.773786, -0.701706, -0.485756, 0.521201, 0, 5.71373, 2.79827)
+light_energy = 1.881
+shadow_enabled = true
+directional_shadow_mode = 0
+
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
-environment = SubResource("Environment_r01ex")
 
 [node name="RayCast3D" type="RayCast3D" parent="XROrigin3D/XRCamera3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
@@ -45,7 +63,7 @@ target_position = Vector3(0, -5, 0)
 [node name="LeftHand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.220756, 0, 0)
 tracker = &"left_hand"
-script = ExtResource("2_3v56t")
+script = ExtResource("2_hhtqu")
 
 [node name="ThumbstickLabel" parent="XROrigin3D/LeftHand" instance=ExtResource("3_voqij")]
 
@@ -55,7 +73,7 @@ mesh = SubResource("BoxMesh_o3l8e")
 [node name="RightHand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(0.999992, 0, 0.00397934, 0, 1, 0, -0.00397934, 0, 0.999992, -0.188627, 0, 0)
 tracker = &"right_hand"
-script = ExtResource("4_f4xca")
+script = ExtResource("4_dj2bq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightHand"]
 mesh = SubResource("BoxMesh_n26ki")
@@ -68,11 +86,12 @@ mesh = SubResource("BoxMesh_n26ki")
 mesh = SubResource("PlaneMesh_4wblh")
 skeleton = NodePath("../..")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World"]
-transform = Transform3D(1, 0, 0, 0, 0.608678, 0.793417, 0, -0.793417, 0.608678, 0, 4.39489, 0)
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="World"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.515028, -3.2682)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17117, 0.515028, -3.2682)
 mesh = SubResource("BoxMesh_78hdv")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="World/MeshInstance3D"]
+
+[node name="Mannequiny" parent="World" instance=ExtResource("5_fm5ow")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.119775, 0.162356, -2.14649)
+script = null

@@ -1,11 +1,13 @@
-RigidBody3D
+CollisionShape3D
+Camera3D
 MeshInstance3D
+DirectionalLight3D
+RigidBody3D
 Node
 WorldEnvironment
 Label
 OpenXRHand
 RayCast3D
-DirectionalLight3D
 XRController3D
 XRCamera3D
 XROrigin3D
