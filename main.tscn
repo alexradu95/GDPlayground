@@ -1,24 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://bjndk0qmcg5ne"]
+[gd_scene load_steps=11 format=3 uid="uid://bjndk0qmcg5ne"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_qyai8"]
 [ext_resource type="Script" path="res://VirtualReality/DirectMovement.gd" id="2_hhtqu"]
 [ext_resource type="PackedScene" path="res://VirtualReality/Controllers/thumbstick_label.tscn" id="3_voqij"]
 [ext_resource type="Script" path="res://VirtualReality/RightHand.gd" id="4_dj2bq"]
 [ext_resource type="PackedScene" uid="uid://cr6l7lhloe0kt" path="res://Assets/Characters/Mannequin/mannequiny.tscn" id="5_fm5ow"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6cyxo"]
-sky_top_color = Color(0.0196078, 0.478431, 0.976471, 1)
-sky_horizon_color = Color(0.512745, 0.696078, 0.754902, 1)
-ground_bottom_color = Color(0.0313726, 0.305882, 0.0431373, 1)
-ground_horizon_color = Color(0.512745, 0.696078, 0.754902, 1)
-
-[sub_resource type="Sky" id="Sky_dsth1"]
-sky_material = SubResource("ProceduralSkyMaterial_6cyxo")
-
-[sub_resource type="Environment" id="Environment_sndxo"]
-background_mode = 2
-sky = SubResource("Sky_dsth1")
-sdfgi_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rs7id"]
 albedo_color = Color(0.462745, 0.984314, 0, 1)
@@ -34,16 +20,11 @@ albedo_color = Color(0, 0, 0, 1)
 material = SubResource("StandardMaterial3D_b2lii")
 size = Vector3(0.05, 0.05, 0.05)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_4wblh"]
-size = Vector2(10, 10)
-
 [sub_resource type="BoxMesh" id="BoxMesh_78hdv"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_qyai8")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_sndxo")
+use_passthrough = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.696831, -0.62034, 0.360007, 0.148447, 0.615808, 0.773786, -0.701706, -0.485756, 0.521201, 0, 5.71373, 2.79827)
@@ -81,10 +62,6 @@ mesh = SubResource("BoxMesh_n26ki")
 [node name="ThumbstickLabel" parent="XROrigin3D/RightHand" instance=ExtResource("3_voqij")]
 
 [node name="World" type="Node" parent="."]
-
-[node name="Floor" type="MeshInstance3D" parent="World"]
-mesh = SubResource("PlaneMesh_4wblh")
-skeleton = NodePath("../..")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="World"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17117, 0.515028, -3.2682)

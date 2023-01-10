@@ -245,10 +245,10 @@ transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_egmoc")
 
 [node name="Physical Bone spine_02" type="PhysicalBone3D" parent="root/Skeleton3D" index="9"]
-transform = Transform3D(0.99817, 0.000321087, 0.000648736, 0.000602455, 0.121622, -0.992578, -0.000395586, 0.992579, 0.121621, -0.000555099, 1.389, 0.274618)
+transform = Transform3D(0.998159, 0.000321087, 0.000648736, 0.000602439, 0.121622, -0.992578, -0.000395582, 0.992579, 0.121621, -0.000555088, 1.389, 0.274618)
 joint_type = 1
-joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78549e-06, -7.47765e-07, 0.122996)
-body_offset = Transform3D(0.998171, 6.47648e-07, 1.12777e-09, -1.36493e-06, 3.7998e-07, -1, -4.91564e-08, 1, 5.06639e-07, 1.78209e-06, 0.122996, 6.85453e-07)
+joint_offset = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.79706e-06, -7.47765e-07, 0.122996)
+body_offset = Transform3D(0.99816, 6.47648e-07, 1.12777e-09, -1.37369e-06, 3.7998e-07, -1, -4.99713e-08, 1, 5.06639e-07, 1.79361e-06, 0.122996, 6.85453e-07)
 bone_name = "spine_02"
 joint_constraints/bias = 0.3
 joint_constraints/damping = 1.0
