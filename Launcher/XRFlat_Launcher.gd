@@ -8,20 +8,11 @@ extends Node
 ##
 
 # Launch the XR scene
-func launch_xr() -> void:
-	print("XR Mode Active")
-	# Add the XROrigin3D to scene
-	var xrControllerResource = load("res://Mode/VirtualReality/XROrigin3D.tscn")
-	var xrController = xrControllerResource.instantiate()
-	get_parent().add_child(xrController);
+func launch_xr():
+	emit_signal("launch_xr")
 	self.hide()
 
-
 # Launch the Flat Scene
-func launch_flat() -> void:
-	print("Standard Non-XR Mode Active")
-	# Add the FirstPersonController to scene
-	var fpsControllerResource : Resource = load("res://Mode/FlatScreen/FPSController.tscn")
-	var fpsController : Node3D = fpsControllerResource.instantiate()
-	get_parent().add_child(fpsController);
+func launch_flat():
+	emit_signal("launch_fps")
 	self.hide()
