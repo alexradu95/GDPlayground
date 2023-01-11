@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bjndk0qmcg5ne"]
+[gd_scene load_steps=11 format=3 uid="uid://b5iu0qygwe6ca"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_qyai8"]
-[ext_resource type="Script" path="res://VirtualReality/DirectMovement.gd" id="2_hhtqu"]
-[ext_resource type="PackedScene" path="res://VirtualReality/Controllers/thumbstick_label.tscn" id="3_voqij"]
-[ext_resource type="Script" path="res://VirtualReality/RightHand.gd" id="4_dj2bq"]
-[ext_resource type="PackedScene" uid="uid://cr6l7lhloe0kt" path="res://Assets/Characters/Mannequin/mannequiny.tscn" id="5_fm5ow"]
+[ext_resource type="Script" path="res://Levels/main.gd" id="1_w7l6q"]
+[ext_resource type="Script" path="res://VirtualReality/Movement/VR_DirectMovement.gd" id="2_c3k6l"]
+[ext_resource type="PackedScene" path="res://VirtualReality/Debug/VR_HandThumbstickDebug.tscn" id="3_l78hl"]
+[ext_resource type="Script" path="res://VirtualReality/Movement/VR_Rotate.gd" id="4_iedec"]
+[ext_resource type="PackedScene" uid="uid://cr6l7lhloe0kt" path="res://Assets/Characters/Mannequin/mannequiny.tscn" id="5_hqslr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rs7id"]
 albedo_color = Color(0.462745, 0.984314, 0, 1)
@@ -23,7 +23,7 @@ size = Vector3(0.05, 0.05, 0.05)
 [sub_resource type="BoxMesh" id="BoxMesh_78hdv"]
 
 [node name="Main" type="Node3D"]
-script = ExtResource("1_qyai8")
+script = ExtResource("1_w7l6q")
 use_passthrough = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -33,7 +33,6 @@ shadow_enabled = true
 directional_shadow_mode = 0
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 
@@ -44,9 +43,9 @@ target_position = Vector3(0, -5, 0)
 [node name="LeftHand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.220756, 0, 0)
 tracker = &"left_hand"
-script = ExtResource("2_hhtqu")
+script = ExtResource("2_c3k6l")
 
-[node name="ThumbstickLabel" parent="XROrigin3D/LeftHand" instance=ExtResource("3_voqij")]
+[node name="ThumbstickLabel" parent="XROrigin3D/LeftHand" instance=ExtResource("3_l78hl")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftHand"]
 mesh = SubResource("BoxMesh_o3l8e")
@@ -54,12 +53,12 @@ mesh = SubResource("BoxMesh_o3l8e")
 [node name="RightHand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(0.999992, 0, 0.00397934, 0, 1, 0, -0.00397934, 0, 0.999992, -0.188627, 0, 0)
 tracker = &"right_hand"
-script = ExtResource("4_dj2bq")
+script = ExtResource("4_iedec")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightHand"]
 mesh = SubResource("BoxMesh_n26ki")
 
-[node name="ThumbstickLabel" parent="XROrigin3D/RightHand" instance=ExtResource("3_voqij")]
+[node name="ThumbstickLabel" parent="XROrigin3D/RightHand" instance=ExtResource("3_l78hl")]
 
 [node name="World" type="Node" parent="."]
 
@@ -69,6 +68,6 @@ mesh = SubResource("BoxMesh_78hdv")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="World/MeshInstance3D"]
 
-[node name="Mannequiny" parent="World" instance=ExtResource("5_fm5ow")]
+[node name="Mannequiny" parent="World" instance=ExtResource("5_hqslr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.119775, 0.162356, -2.14649)
 script = null

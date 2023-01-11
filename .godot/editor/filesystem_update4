@@ -1,5 +1,2 @@
 res://main.tscn
-res://DirectMovement.gd
-res://Assets/Characters/Mannequin/mannequiny.tscn
-res://Assets/Characters/Mannequin/mannequiny.gd
-res://main.gd
+res://Levels/main.tscn

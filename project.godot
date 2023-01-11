@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Laboratory4"
-run/main_scene="res://main.tscn"
+run/main_scene="res://Levels/main.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
 
@@ -30,5 +30,5 @@ renderer/rendering_method="mobile"
 [xr]
 
 openxr/enabled=true
-openxr/default_action_map="res://VirtualReality/openxr_action_map.tres"
+openxr/default_action_map="res://VirtualReality/ActionMap/openxr_action_map.tres"
 shaders/enabled=true
