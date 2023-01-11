@@ -14,34 +14,34 @@ grow_vertical = 2
 script = ExtResource("1_kwf5w")
 
 [node name="Panel" type="Panel" parent="."]
-layout_mode = 0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-layout_mode = 0
-anchor_right = 1.0
-anchor_bottom = 1.0
-alignment = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
-layout_mode = 2
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+offset_right = 1152.0
+offset_bottom = 648.0
 size_flags_vertical = 3
 alignment = 1
 
-[node name="XRButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
-layout_mode = 2
+[node name="XRButton" type="Button" parent="Panel/HBoxContainer"]
+offset_right = 574.0
+offset_bottom = 648.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource("1")
 text = "XR"
 
-[node name="FlatButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
-layout_mode = 2
+[node name="FlatButton" type="Button" parent="Panel/HBoxContainer"]
+offset_left = 578.0
+offset_right = 1152.0
+offset_bottom = 648.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource("1")
 text = "Flat"
 
-[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/XRButton" to="." method="launch_xr"]
-[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/FlatButton" to="." method="launch_flat"]
+[connection signal="pressed" from="Panel/HBoxContainer/XRButton" to="." method="launch_xr_button_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/FlatButton" to="." method="launch_fps_button_pressed"]
