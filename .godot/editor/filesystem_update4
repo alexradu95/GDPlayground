@@ -1,4 +1,4 @@
 res://Launcher/XRFlat_Launcher.tscn
-res://Mode/VirtualReality/XROrigin3D.tscn
 res://Levels/main.tscn
-res://Mode/VirtualReality/XROriginScript.gd
+res://Mode/VirtualReality/XROrigin3D.tscn
+res://Mode/VirtualReality/Debug/VR_HandThumbstickDebug.gd

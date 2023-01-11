@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Mode/VirtualReality/Movement/VR_DirectMovement.gd" id="1_as2gc"]
 [ext_resource type="Script" path="res://Mode/VirtualReality/XROriginScript.gd" id="1_sr74w"]
-[ext_resource type="PackedScene" path="res://Mode/VirtualReality/Debug/VR_HandThumbstickDebug.tscn" id="2_7u6pv"]
+[ext_resource type="Script" path="res://Mode/VirtualReality/Debug/VR_HandThumbstickDebug.gd" id="3_g1vpb"]
 [ext_resource type="Script" path="res://Mode/VirtualReality/Movement/VR_Rotate.gd" id="3_rfgda"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rs7id"]
@@ -33,10 +33,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.220756, 0, 0)
 tracker = &"left_hand"
 script = ExtResource("1_as2gc")
 
-[node name="ThumbstickLabel" parent="LeftHand" instance=ExtResource("2_7u6pv")]
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="LeftHand"]
 mesh = SubResource("BoxMesh_o3l8e")
+
+[node name="ThumbstickDebugLeft" type="Label3D" parent="LeftHand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.401726, 0.00389383, 0.0410217)
+pixel_size = 0.0003
+text = "( 0, 0 )"
+script = ExtResource("3_g1vpb")
 
 [node name="RightHand" type="XRController3D" parent="."]
 transform = Transform3D(0.999992, 0, 0.00397934, 0, 1, 0, -0.00397934, 0, 0.999992, -0.188627, 0, 0)
@@ -46,4 +50,9 @@ script = ExtResource("3_rfgda")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RightHand"]
 mesh = SubResource("BoxMesh_n26ki")
 
-[node name="ThumbstickLabel" parent="RightHand" instance=ExtResource("2_7u6pv")]
+[node name="ThumbstickDebugRight" type="Label3D" parent="RightHand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.408808, 0, 0.0293412)
+pixel_size = 0.0003
+text = "( 0, 0 )"
+uppercase = true
+script = ExtResource("3_g1vpb")
