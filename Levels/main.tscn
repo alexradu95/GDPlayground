@@ -20,19 +20,17 @@ shadow_enabled = true
 directional_shadow_mode = 0
 
 [node name="Launcher" parent="." instance=ExtResource("1_uj58s")]
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="World" type="Node" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="World"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17117, 0.515028, -3.2682)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.171, 1, -3.268)
 mesh = SubResource("BoxMesh_78hdv")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="World/MeshInstance3D"]
 
 [node name="Mannequiny" parent="World" instance=ExtResource("5_hqslr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.119775, 0.162356, -2.14649)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12, 0.5, -2.146)
 script = null
 
 [node name="Floor" type="StaticBody3D" parent="."]

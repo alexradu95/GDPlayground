@@ -6,3 +6,5 @@ res://Launcher/XRFlat_Launcher.gd
 res://Levels/FPSController.gd
 res://Mode/FlatScreen/FPSController.tscn
 res://Mode/FlatScreen/FPSController.gd
+res://Mode/VirtualReality/XROrigin3D.tscn
+res://Mode/VirtualReality/XROriginScript.gd
