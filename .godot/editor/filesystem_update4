@@ -1,5 +1,3 @@
-res://Levels/main.tscn
+res://Mode/VirtualReality/XROrigin3D.tscn
 res://Assets/Shaders/Water.tres
-res://Mode/FlatScreen/FPSController.tscn
-res://Assets/Characters/Mannequin/mannequiny.tscn
-res://Assets/Characters/Mannequin/mannequiny.gd
+res://Mode/VirtualReality/XROriginScript.gd
