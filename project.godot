@@ -8,53 +8,16 @@
 
 config_version=5
 
-_global_script_classes=[{
-"base": "Node",
-"class": &"XrOrFlatModeLauncher",
-"language": &"GDScript",
-"path": "res://XRFlatMode/xr_or_flat_mode_launcher.gd"
-}]
-_global_script_class_icons={
-"XrOrFlatModeLauncher": ""
-}
-
 [application]
 
 config/name="Laboratory4"
-run/main_scene="res://Levels/Main/Base/main_base.tscn"
+run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
-
-[autoload]
-
-XR_FLAT_SINGLETON="*res://XRFlatMode/xr_or_flat_mode_launcher.tscn"
 
 [editor_plugins]
 
 enabled=PackedStringArray()
-
-[input]
-
-move_forward={
-"deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194327,"unicode":0,"echo":false,"script":null)
-]
-}
-move_backward={
-"deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"unicode":0,"echo":false,"script":null)
-]
-}
-move_left={
-"deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"unicode":0,"echo":false,"script":null)
-]
-}
-move_right={
-"deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"unicode":0,"echo":false,"script":null)
-]
-}
 
 [physics]
 
@@ -67,5 +30,5 @@ renderer/rendering_method="mobile"
 [xr]
 
 openxr/enabled=true
-openxr/default_action_map="res://Functionality/Control/VirtualReality/ActionMap/openxr_action_map.tres"
+openxr/default_action_map="res://VirtualReality/openxr_action_map.tres"
 shaders/enabled=true

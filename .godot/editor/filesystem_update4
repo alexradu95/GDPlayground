@@ -1,13 +1,5 @@
 res://main.tscn
-res://XRFlatMode/xr_or_flat_mode_launcher.gd
-res://XRFlatMode/xr_or_flat_mode_launcher.tscn
-res://XRFlatMode/xr_or_flat_mode_singleton.gd
-res://Levels/Main/Base/main.tscn
-res://Levels/Main/Base/main_base.tscn
-res://Levels/Main/XR/xr_base.tscn
-res://Levels/Main/Flat/flat_base.tscn
-res://Functionality/Control/VirtualReality/Debug/thumbstick_vector_show.tscn
-res://Functionality/Control/VirtualReality/Rotate.gd
-res://Functionality/Control/VirtualReality/Debug/ThumbstickDebug/thumbstick_vector_show.tscn
-res://Functionality/Control/VirtualReality/ActionMap/openxr_action_map.tres
-res://Levels/Main/Base/FlatScreenCharacter.gd
+res://DirectMovement.gd
+res://Assets/Characters/Mannequin/mannequiny.tscn
+res://Assets/Characters/Mannequin/mannequiny.gd
+res://main.gd
