@@ -1,20 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfaws0o43xs3l"]
+[gd_scene load_steps=7 format=3 uid="uid://cfaws0o43xs3l"]
 
 [ext_resource type="PackedScene" uid="uid://doxr3hbj6jlgf" path="res://Launcher/XRFlat_Launcher.tscn" id="1_uj58s"]
+[ext_resource type="Shader" uid="uid://8ym8jl7ktm3u" path="res://Assets/Shaders/Water.tres" id="3_qckl0"]
 [ext_resource type="PackedScene" uid="uid://cr6l7lhloe0kt" path="res://Assets/Characters/Mannequin/mannequiny.tscn" id="5_hqslr"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_78hdv"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ljfji"]
+render_priority = 0
+shader = ExtResource("3_qckl0")
+shader_parameter/ColorParameter = null
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_tuplw"]
+[sub_resource type="BoxMesh" id="BoxMesh_mbbbm"]
+material = SubResource("ShaderMaterial_ljfji")
 size = Vector3(20, 1, 20)
 
-[sub_resource type="BoxMesh" id="BoxMesh_y3rku"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_tuplw"]
 size = Vector3(20, 1, 20)
 
 [node name="Main" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.696831, -0.62034, 0.360007, 0.148447, 0.615808, 0.773786, -0.701706, -0.485756, 0.521201, 0, 5.71373, 2.79827)
+transform = Transform3D(0.696831, -0.620341, 0.360006, 0.552775, 0.784328, 0.28155, -0.45702, 0.00280987, 0.889452, 21.8489, 5.71373, 2.79827)
 light_energy = 1.881
 shadow_enabled = true
 directional_shadow_mode = 0
@@ -23,20 +28,15 @@ directional_shadow_mode = 0
 
 [node name="World" type="Node" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.171, 1, -3.268)
-mesh = SubResource("BoxMesh_78hdv")
-
-[node name="RigidBody3D" type="RigidBody3D" parent="World/MeshInstance3D"]
-
 [node name="Mannequiny" parent="World" instance=ExtResource("5_hqslr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12, 0.5, -2.146)
-script = null
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.105106, 0.401598, -2.14872)
 
 [node name="Floor" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
-shape = SubResource("BoxShape3D_tuplw")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("BoxMesh_mbbbm")
+skeleton = NodePath("../CollisionShape3D")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/CollisionShape3D"]
-mesh = SubResource("BoxMesh_y3rku")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.183055, 0)
+shape = SubResource("BoxShape3D_tuplw")

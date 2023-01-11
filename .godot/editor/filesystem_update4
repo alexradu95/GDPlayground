@@ -1,5 +1,5 @@
-res://Launcher/XRFlat_Launcher.tscn
 res://Levels/main.tscn
-res://Mode/VirtualReality/XROrigin3D.tscn
-res://Mode/VirtualReality/Debug/VR_HandThumbstickDebug.gd
+res://Assets/Shaders/Water.tres
 res://Mode/FlatScreen/FPSController.tscn
+res://Assets/Characters/Mannequin/mannequiny.tscn
+res://Assets/Characters/Mannequin/mannequiny.gd

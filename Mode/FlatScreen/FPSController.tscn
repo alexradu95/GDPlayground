@@ -10,7 +10,7 @@ points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607,
 [node name="FPSController" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_0dcde")
-jump_velocity = 5
+jump_velocity = 4
 look_sensitivity = 0.01
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

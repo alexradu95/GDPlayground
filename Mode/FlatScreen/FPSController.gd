@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export var speed = 10
-@export var jump_velocity = 100
+@export var jump_velocity = 20
 @export var look_sensitivity = 0.05
 
 # We need the Camera3D to apply the UP/Down Rotation from mouse
