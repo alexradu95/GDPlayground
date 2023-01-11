@@ -1,21 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfaws0o43xs3l"]
+[gd_scene load_steps=4 format=3 uid="uid://cfaws0o43xs3l"]
 
-[ext_resource type="PackedScene" uid="uid://m2sggnjy8s5n" path="res://Mode/VirtualReality/XROrigin3D.tscn" id="2_fi8ah"]
-[ext_resource type="Script" path="res://Mode/VirtualReality/XROriginScript.gd" id="2_gcx3x"]
+[ext_resource type="PackedScene" uid="uid://doxr3hbj6jlgf" path="res://Launcher/XRFlat_Launcher.tscn" id="1_uj58s"]
 [ext_resource type="PackedScene" uid="uid://cr6l7lhloe0kt" path="res://Assets/Characters/Mannequin/mannequiny.tscn" id="5_hqslr"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_78hdv"]
 
 [node name="Main" type="Node3D"]
 
+[node name="Launcher" parent="." instance=ExtResource("1_uj58s")]
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.696831, -0.62034, 0.360007, 0.148447, 0.615808, 0.773786, -0.701706, -0.485756, 0.521201, 0, 5.71373, 2.79827)
 light_energy = 1.881
 shadow_enabled = true
 directional_shadow_mode = 0
-
-[node name="XROrigin3D" parent="." instance=ExtResource("2_fi8ah")]
-script = ExtResource("2_gcx3x")
 
 [node name="World" type="Node" parent="."]
 

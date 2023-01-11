@@ -8,6 +8,16 @@
 
 config_version=5
 
+_global_script_classes=[{
+"base": "Node",
+"class": &"XrOrFlatModeLauncher",
+"language": &"GDScript",
+"path": "res://Launcher/XRFlat_Launcher.gd"
+}]
+_global_script_class_icons={
+"XrOrFlatModeLauncher": ""
+}
+
 [application]
 
 config/name="Laboratory4"
@@ -25,7 +35,7 @@ common/physics_ticks_per_second=90
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
 
 [xr]
 
