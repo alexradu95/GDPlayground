@@ -1,4 +1,4 @@
-extends Node3D
+extends XROrigin3D
 
 @export var use_passthrough : bool
 
@@ -10,8 +10,3 @@ func _ready():
 		vp.transparent_bg = true
 		vp.use_xr = use_passthrough
 		xr_interface.start_passthrough()
-		
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
