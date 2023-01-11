@@ -21,7 +21,7 @@ func launch_xr() -> void:
 func launch_flat() -> void:
 	print("Standard Non-XR Mode Active")
 	# Add the FirstPersonController to scene
-	var fpsControllerResource = load("res://Mode/FlatScreen/FPSController.tscn")
-	var fpsController = fpsControllerResource.instantiate()
+	var fpsControllerResource : Resource = load("res://Mode/FlatScreen/FPSController.tscn")
+	var fpsController : Node3D = fpsControllerResource.instantiate()
 	get_parent().add_child(fpsController);
 	self.hide()

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccy1vs5adn1o0"]
+
+[ext_resource type="Script" path="res://Mode/FlatScreen/FPSController.gd" id="1_0dcde"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_guk3f"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_fhhxc"]
+
+[node name="FPSController" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_0dcde")
+jump_velocity = 5
+look_sensitivity = 0.01
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_guk3f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_fhhxc")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

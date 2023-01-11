@@ -3,3 +3,6 @@ res://Launcher/xr_or_flat_mode_launcher.tscn
 res://launcher/xr_or_flat_mode_launcher.gd
 res://Launcher/XRFlat_Launcher.tscn
 res://Launcher/XRFlat_Launcher.gd
+res://Levels/FPSController.gd
+res://Mode/FlatScreen/FPSController.tscn
+res://Mode/FlatScreen/FPSController.gd

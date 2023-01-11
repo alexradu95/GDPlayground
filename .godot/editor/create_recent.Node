@@ -1,6 +1,8 @@
-CollisionShape3D
-Camera3D
 MeshInstance3D
+CollisionShape3D
+StaticBody3D
+Camera3D
+CharacterBody3D
 DirectionalLight3D
 RigidBody3D
 Node
