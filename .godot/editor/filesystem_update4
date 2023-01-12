@@ -2,3 +2,5 @@ res://Levels/Main/main.tscn
 res://Assets/Shaders/Water.tres
 res://Mode/PlayerControlManager.gd
 res://Levels/BaseLevel.gd
+res://Mode/XRMode/PlayerBody/player_body.tscn
+res://Mode/XRMode/PlayerBody/player_body.gd
