@@ -1,11 +1,23 @@
 extends Node3D
 
+@export var autodetect_mode : bool
+
 func _init():
 	pass
 
 func _ready() :
-	$Launcher.launch_xr.connect(_on_launch_xr)
-	$Launcher.launch_fps.connect(_on_launch_fps)
+	if(autodetect_mode):
+		# Launch XR if it can be initialized, otherwise launch flat
+		print("Autodetecting XR or non-XR mode on whether a headset is connected...")
+		var xr_interface := XRServer.find_interface("OpenXR")
+		if xr_interface and xr_interface.initialize():
+			_on_launch_xr()
+		else:
+			_on_launch_fps()
+	else:
+		$Launcher.show()
+		$Launcher.launch_xr.connect(_on_launch_xr)
+		$Launcher.launch_fps.connect(_on_launch_fps)
 
 
 func _on_launch_xr() -> void:

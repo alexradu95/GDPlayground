@@ -1,8 +1,3 @@
-res://Mode/FlatScreen/FPSController.tscn
-res://Assets/Shaders/Water.tres
 res://Levels/main.tscn
-res://Mode/VirtualReality/XROrigin3D.tscn
-res://Launcher/XRFlat_Launcher.tscn
-res://Launcher/XRFlat_Launcher.gd
+res://Assets/Shaders/Water.tres
 res://Levels/BaseLevel.gd
-res://Assets/Characters/Mannequin/mannequiny.gd
