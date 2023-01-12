@@ -1,14 +1,2 @@
-res://UI/Launcher/XRFlat_Launcher.gd
-res://UI/Launcher/XRFlat_Launcher.tscn
-res://Assets/Shaders/Water.tres
-res://Mode/FlatMode/3rdPersonController/ThirdPersonController.tscn
 res://Levels/Main/main.tscn
-res://Levels/BaseLevel.gd
-res://UI/Debugger/Debugger.tscn
-res://UI/Debugger/Debugger.gd
-res://Mode/XRMode/XRController/XROrigin3D.tscn
-res://Mode/XRMode/XRController/Movement/VR_DirectMovement.gd
-res://Mode/player_control_singleton.gd
-res://Mode/PlayerControlManager.tscn
-res://Mode/PlayerControlManager.gd
-res://Mode/FlatMode/FPSController/FPSController.tscn
+res://Assets/Shaders/Water.tres
