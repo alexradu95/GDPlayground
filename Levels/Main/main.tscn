@@ -20,6 +20,7 @@ size = Vector3(20, 1, 20)
 [node name="Main" type="Node3D"]
 script = ExtResource("1_g4ywr")
 autodetect_mode = false
+show_debugger = true
 
 [node name="World" type="Node" parent="."]
 

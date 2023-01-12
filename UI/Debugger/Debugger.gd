@@ -1,7 +1,7 @@
 extends Control
 
 @onready var _label: Label = $Label
-var _player;
+@onready var _player = get_tree().get_nodes_in_group("player")[0];
 
 func _ready():
 	pass # Replace with function body.
