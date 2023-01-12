@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://n1v01flc2jyb"]
+[gd_scene load_steps=9 format=3]
 
-[ext_resource type="Script" path="res://Mode/XRController/Movement/VR_DirectMovement.gd" id="1_as2gc"]
-[ext_resource type="Script" path="res://Mode/XRController/XROriginScript.gd" id="1_sr74w"]
-[ext_resource type="Script" path="res://Mode/XRController/Debug/VR_HandThumbstickDebug.gd" id="3_g1vpb"]
-[ext_resource type="Script" path="res://Mode/XRController/Movement/VR_Rotate.gd" id="3_rfgda"]
+[ext_resource type="Script" path="res://Mode/XRMode/XRController/Movement/VR_DirectMovement.gd" id="1_as2gc"]
+[ext_resource type="Script" path="res://Mode/XRMode/XRController/XROriginScript.gd" id="1_sr74w"]
+[ext_resource type="Script" path="res://Mode/XRMode/XRController/Debug/VR_HandThumbstickDebug.gd" id="3_g1vpb"]
+[ext_resource type="Script" path="res://Mode/XRMode/XRController/Movement/VR_Rotate.gd" id="3_rfgda"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rs7id"]
 albedo_color = Color(0.462745, 0.984314, 0, 1)

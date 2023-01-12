@@ -4,6 +4,9 @@ extends Node3D
 
 func _init():
 	pass
+	
+func _process(delta):
+	toggle_mouse_capture()
 
 func _ready() :
 	if(autodetect_mode):
@@ -16,15 +19,21 @@ func _ready() :
 			_on_launch_fps()
 	else:
 		$CanvasLayer/Launcher.show()
-		$CanvasLayer/Launcher.launch_xr.connect(_on_launch_xr)
-		$CanvasLayer/Launcher.launch_fps.connect(_on_launch_fps)
-		$CanvasLayer/Launcher.launch_fps.connect(_on_launch_fps)
+		_connect_signals()
 
+func _connect_signals() :
+	$CanvasLayer/Launcher.launch_xr.connect(_on_launch_xr)
+	$CanvasLayer/Launcher.launch_fps.connect(_on_launch_fps)
+	$CanvasLayer/Launcher.launch_fps.connect(_on_launch_fps)
+	
+func toggle_mouse_capture():
+	if Input.is_action_just_pressed("ui_cancel"): 
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE else Input.MOUSE_MODE_VISIBLE
 
 func _on_launch_xr() -> void:
 	print("XR Mode Active")
 	# Add the XROrigin3D to scene
-	var xrControllerResource = load("res://Mode/XRController/XROrigin3D.tscn")
+	var xrControllerResource = load("res://Mode/XRMode/XRController/XROrigin3D.tscn")
 	var xrController = xrControllerResource.instantiate()
 	add_child(xrController)
 
@@ -32,7 +41,7 @@ func _on_launch_xr() -> void:
 func _on_launch_fps() -> void:
 	print("Standard Non-XR Mode Active | FPS MODE")
 	# Add the FirstPersonController to scene
-	var fpsControllerResource : Resource = load("res://Mode/FPSController/FPSController.tscn")
+	var fpsControllerResource : Resource = load("res://Mode/FlatMode/FPSController/FPSController.tscn")
 	var fpsController : Node3D = fpsControllerResource.instantiate()
 	add_child(fpsController)
 	
@@ -40,6 +49,6 @@ func _on_launch_fps() -> void:
 func _on_launch_tps() -> void:
 	print("Standard Non-XR Mode Active | TPS MODE")
 	# Add the FirstPersonController to scene
-	var fpsControllerResource : Resource = load("res://Mode/3rdPersonController/ThirdPersonController.tscn")
+	var fpsControllerResource : Resource = load("res://Mode/FlatMode/3rdPersonController/ThirdPersonController.tscn")
 	var fpsController : Node3D = fpsControllerResource.instantiate()
 	add_child(fpsController)

@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://btyekhdhb1ahb"]
+[gd_scene load_steps=6 format=3 uid="uid://b330tvj8skr6t"]
 
-[ext_resource type="Script" path="res://Mode/3rdPersonController/ThirdPersonController.gd" id="1_4hlc6"]
-[ext_resource type="Script" path="res://Mode/3rdPersonController/SpringArm.gd" id="2_vah68"]
+[ext_resource type="Script" path="res://Mode/FlatMode/3rdPersonController/ThirdPersonController.gd" id="1_4hlc6"]
+[ext_resource type="Script" path="res://Mode/FlatMode/3rdPersonController/SpringArm.gd" id="2_vah68"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_th0y7"]
 
@@ -16,6 +16,8 @@ rings = 1
 
 [node name="ThirdPersonController" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_4hlc6")
+move_speed = 4
+mouse_sensitivity = 0.05
 
 [node name="Model" type="Node3D" parent="."]
 

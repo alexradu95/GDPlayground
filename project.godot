@@ -9,19 +9,25 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "CharacterBody3D",
+"class": &"BaseCharacterBodyController",
+"language": &"GDScript",
+"path": "res://Mode/FlatMode/BaseFlatController.gd"
+}, {
 "base": "Node",
 "class": &"XrOrFlatModeLauncher",
 "language": &"GDScript",
 "path": "res://UI/Launcher/XRFlat_Launcher.gd"
 }]
 _global_script_class_icons={
+"BaseCharacterBodyController": "",
 "XrOrFlatModeLauncher": ""
 }
 
 [application]
 
 config/name="Laboratory4"
-run/main_scene="res://Levels/main.tscn"
+run/main_scene="res://Levels/Main/main.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
 
@@ -68,5 +74,5 @@ renderer/rendering_method="mobile"
 [xr]
 
 openxr/enabled=true
-openxr/default_action_map="res://Mode/XRController/ActionMap/openxr_action_map.tres"
+openxr/default_action_map="res://Mode/XRMode/XRController/ActionMap/openxr_action_map.tres"
 shaders/enabled=true

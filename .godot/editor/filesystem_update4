@@ -1,5 +1,4 @@
-res://Mode/3rdPersonController/ThirdPersonController.tscn
+res://Mode/FlatMode/3rdPersonController/ThirdPersonController.tscn
 res://Assets/Shaders/Water.tres
-res://Mode/3rdPersonController/ThirdPersonController.gd
-res://Mode/3rdPersonController/SpringArm.gd
-res://Levels/main.tscn
+res://Levels/Main/main.tscn
+res://Mode/FlatMode/FPSController/FPSController.tscn

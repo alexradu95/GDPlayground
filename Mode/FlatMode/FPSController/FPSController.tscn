@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmjqplkanxd7j"]
+[gd_scene load_steps=4 format=3 uid="uid://d0i5gsgfd78id"]
 
-[ext_resource type="Script" path="res://Mode/FPSController/FPSController.gd" id="1_0dcde"]
+[ext_resource type="Script" path="res://Mode/FlatMode/FPSController/FPSController.gd" id="1_0dcde"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_fhhxc"]
 
@@ -11,7 +11,6 @@ points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_0dcde")
 jump_velocity = 4
-look_sensitivity = 0.01
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_fhhxc")

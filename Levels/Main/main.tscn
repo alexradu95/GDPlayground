@@ -1,13 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfaws0o43xs3l"]
+[gd_scene load_steps=8 format=3 uid="uid://dljqd4t82cnl4"]
 
-[ext_resource type="Script" path="res://Levels/BaseLevel.gd" id="1_i2cc1"]
-[ext_resource type="PackedScene" uid="uid://doxr3hbj6jlgf" path="res://UI/Launcher/XRFlat_Launcher.tscn" id="2_ngvis"]
-[ext_resource type="Shader" uid="uid://8ym8jl7ktm3u" path="res://Assets/Shaders/Water.tres" id="3_qckl0"]
-[ext_resource type="PackedScene" uid="uid://cr6l7lhloe0kt" path="res://Assets/Characters/Mannequin/mannequiny.tscn" id="5_hqslr"]
+[ext_resource type="Script" path="res://Levels/BaseLevel.gd" id="1_g4ywr"]
+[ext_resource type="PackedScene" uid="uid://cr6l7lhloe0kt" path="res://Assets/Characters/Mannequin/mannequiny.tscn" id="2_3augp"]
+[ext_resource type="Shader" uid="uid://8ym8jl7ktm3u" path="res://Assets/Shaders/Water.tres" id="3_x3twi"]
+[ext_resource type="PackedScene" uid="uid://doxr3hbj6jlgf" path="res://UI/Launcher/XRFlat_Launcher.tscn" id="4_qac1c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ljfji"]
 render_priority = 0
-shader = ExtResource("3_qckl0")
+shader = ExtResource("3_x3twi")
 shader_parameter/ColorParameter = null
 
 [sub_resource type="BoxMesh" id="BoxMesh_mbbbm"]
@@ -18,12 +18,12 @@ size = Vector3(20, 1, 20)
 size = Vector3(20, 1, 20)
 
 [node name="Main" type="Node3D"]
-script = ExtResource("1_i2cc1")
+script = ExtResource("1_g4ywr")
 autodetect_mode = false
 
 [node name="World" type="Node" parent="."]
 
-[node name="Mannequiny" parent="World" instance=ExtResource("5_hqslr")]
+[node name="Mannequiny" parent="World" instance=ExtResource("2_3augp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.105106, 0.401598, -2.14872)
 
 [node name="Floor" type="StaticBody3D" parent="."]
@@ -44,7 +44,7 @@ directional_shadow_mode = 0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Launcher" parent="CanvasLayer" instance=ExtResource("2_ngvis")]
+[node name="Launcher" parent="CanvasLayer" instance=ExtResource("4_qac1c")]
 
 [connection signal="launch_fps" from="CanvasLayer/Launcher" to="." method="_on_launch_fps"]
 [connection signal="launch_tps" from="CanvasLayer/Launcher" to="." method="_on_launch_tps"]
