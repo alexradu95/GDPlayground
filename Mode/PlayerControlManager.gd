@@ -9,7 +9,7 @@ extends Node
 
 
 func _instantiate_xr_controller() -> Node3D:
-	var xrControllerResource = load("res://Mode/XRMode/XRController/XROrigin3D.tscn")
+	var xrControllerResource = load("res://Mode/XRMode/XRController/PlayerBody/player_body.tscn")
 	return xrControllerResource.instantiate()
 
 func _instantiate_fps_controller() -> Node3D:

@@ -1,13 +1,14 @@
 MeshInstance3D
+Node3D
+XROrigin3D
+CharacterBody3D
 BaseCharacterBodyController
 SpringArm3D
-Node3D
 CanvasLayer
 Label
 Button
 Camera3D
 CollisionShape3D
-CharacterBody3D
 Label3D
 StaticBody3D
 DirectionalLight3D
@@ -18,4 +19,3 @@ OpenXRHand
 RayCast3D
 XRController3D
 XRCamera3D
-XROrigin3D
