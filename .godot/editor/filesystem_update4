@@ -1,2 +1,4 @@
 res://Levels/Main/main.tscn
 res://Assets/Shaders/Water.tres
+res://Mode/PlayerControlManager.gd
+res://Levels/BaseLevel.gd

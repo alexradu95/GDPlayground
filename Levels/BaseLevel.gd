@@ -25,6 +25,11 @@ func _connect_signals() :
 	$CanvasLayer/Launcher.launch_fps.connect(_on_launch_fps)
 	
 func _on_launch_xr() -> void:
+	var xr_interface: XRInterface = XRServer.find_interface("OpenXR")
+	if xr_interface and xr_interface.is_initialized():
+		var vp : Viewport = get_viewport()
+		vp.use_xr = true
+		
 	var xrController = PlayerControlManager._instantiate_xr_controller()
 	add_child(xrController)
 

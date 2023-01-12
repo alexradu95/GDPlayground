@@ -31,6 +31,10 @@ run/main_scene="res://Levels/Main/main.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+PlayerControlManager="*res://Mode/PlayerControlManager.gd"
+
 [editor_plugins]
 
 enabled=PackedStringArray()
@@ -74,5 +78,5 @@ renderer/rendering_method="mobile"
 [xr]
 
 openxr/enabled=true
-openxr/default_action_map="res://Mode/XRMode/XRController/ActionMap/openxr_action_map.tres"
+openxr/default_action_map="res://Mode/openxr_action_map.tres"
 shaders/enabled=true
