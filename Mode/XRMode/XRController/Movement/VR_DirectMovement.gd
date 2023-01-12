@@ -1,9 +1,5 @@
 extends XRController3D
 
-# A variable to hold whether this VR controller is moving the player using the touchpad/joystick.
-# (This is needed for the vignette effect, as it only shows when the VR controller(s) are moving the player)
-var directional_movement: bool
-
 # A constant to define the dead zone for both the trackpad and the joystick.
 # See (http://www.third-helix.com/2013/04/12/doing-thumbstick-dead-zones-right.html)
 # for more information on what dead zones are, and how we are using them in this project.
@@ -54,8 +50,3 @@ func _physics_process_directional_movement(delta):
 		# Move the ARVR node (which is assumed to be the parent node) in the direction the player is pushing
 		# the trackpad/joystick towards.
 		get_parent().global_translate(movement_right + movement_forward)
-		directional_movement = true
-		# If there is not movement to apply...
-	else:
-			# Set directional_movement to false so the code knows this VR controller is not moving the player.
-		directional_movement = false

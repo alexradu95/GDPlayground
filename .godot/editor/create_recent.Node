@@ -1,8 +1,9 @@
+MeshInstance3D
+BaseCharacterBodyController
 SpringArm3D
 Node3D
 CanvasLayer
 Label
-MeshInstance3D
 Button
 Camera3D
 CollisionShape3D

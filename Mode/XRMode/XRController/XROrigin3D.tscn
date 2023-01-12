@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=9 format=3 uid="uid://b87ybcb3pknj0"]
 
 [ext_resource type="Script" path="res://Mode/XRMode/XRController/Movement/VR_DirectMovement.gd" id="1_as2gc"]
 [ext_resource type="Script" path="res://Mode/XRMode/XRController/XROriginScript.gd" id="1_sr74w"]
