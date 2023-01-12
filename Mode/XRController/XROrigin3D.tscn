@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://m2sggnjy8s5n"]
+[gd_scene load_steps=9 format=3 uid="uid://n1v01flc2jyb"]
 
-[ext_resource type="Script" path="res://Mode/VirtualReality/Movement/VR_DirectMovement.gd" id="1_as2gc"]
-[ext_resource type="Script" path="res://Mode/VirtualReality/XROriginScript.gd" id="1_sr74w"]
-[ext_resource type="Script" path="res://Mode/VirtualReality/Debug/VR_HandThumbstickDebug.gd" id="3_g1vpb"]
-[ext_resource type="Script" path="res://Mode/VirtualReality/Movement/VR_Rotate.gd" id="3_rfgda"]
+[ext_resource type="Script" path="res://Mode/XRController/Movement/VR_DirectMovement.gd" id="1_as2gc"]
+[ext_resource type="Script" path="res://Mode/XRController/XROriginScript.gd" id="1_sr74w"]
+[ext_resource type="Script" path="res://Mode/XRController/Debug/VR_HandThumbstickDebug.gd" id="3_g1vpb"]
+[ext_resource type="Script" path="res://Mode/XRController/Movement/VR_Rotate.gd" id="3_rfgda"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rs7id"]
 albedo_color = Color(0.462745, 0.984314, 0, 1)
@@ -19,7 +19,7 @@ albedo_color = Color(0, 0, 0, 1)
 material = SubResource("StandardMaterial3D_b2lii")
 size = Vector3(0.05, 0.05, 0.05)
 
-[node name="XROrigin3D" type="XROrigin3D"]
+[node name="XROrigin3D" type="XROrigin3D" groups=["player"]]
 script = ExtResource("1_sr74w")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="."]

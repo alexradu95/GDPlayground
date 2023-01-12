@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://btyekhdhb1ahb"]
+
+[ext_resource type="Script" path="res://Mode/3rdPersonController/ThirdPersonController.gd" id="1_4hlc6"]
+[ext_resource type="Script" path="res://Mode/3rdPersonController/SpringArm.gd" id="2_vah68"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_th0y7"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bvaaf"]
+top_radius = 0.1
+bottom_radius = 0.2
+height = 1.0
+radial_segments = 4
+rings = 1
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3krgq"]
+
+[node name="ThirdPersonController" type="CharacterBody3D" groups=["player"]]
+script = ExtResource("1_4hlc6")
+
+[node name="Model" type="Node3D" parent="."]
+
+[node name="Body" type="MeshInstance3D" parent="Model"]
+mesh = SubResource("CapsuleMesh_th0y7")
+skeleton = NodePath("../..")
+
+[node name="Nose" type="MeshInstance3D" parent="Model"]
+transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, -1, -8.74228e-08, -1, -4.37114e-08, 0, 0.206676, -0.90881)
+mesh = SubResource("CylinderMesh_bvaaf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_3krgq")
+
+[node name="SpringArm" type="SpringArm3D" parent="."]
+spring_length = 7.0
+margin = 0.2
+script = ExtResource("2_vah68")
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm"]

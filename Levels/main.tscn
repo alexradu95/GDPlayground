@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cfaws0o43xs3l"]
 
 [ext_resource type="Script" path="res://Levels/BaseLevel.gd" id="1_i2cc1"]
-[ext_resource type="PackedScene" uid="uid://doxr3hbj6jlgf" path="res://Launcher/XRFlat_Launcher.tscn" id="1_uj58s"]
+[ext_resource type="PackedScene" uid="uid://doxr3hbj6jlgf" path="res://UI/Launcher/XRFlat_Launcher.tscn" id="2_ngvis"]
 [ext_resource type="Shader" uid="uid://8ym8jl7ktm3u" path="res://Assets/Shaders/Water.tres" id="3_qckl0"]
 [ext_resource type="PackedScene" uid="uid://cr6l7lhloe0kt" path="res://Assets/Characters/Mannequin/mannequiny.tscn" id="5_hqslr"]
 
@@ -20,9 +20,6 @@ size = Vector3(20, 1, 20)
 [node name="Main" type="Node3D"]
 script = ExtResource("1_i2cc1")
 autodetect_mode = false
-
-[node name="Launcher" parent="." instance=ExtResource("1_uj58s")]
-visible = false
 
 [node name="World" type="Node" parent="."]
 
@@ -45,5 +42,10 @@ light_energy = 1.881
 shadow_enabled = true
 directional_shadow_mode = 0
 
-[connection signal="launch_fps" from="Launcher" to="." method="_on_launch_fps"]
-[connection signal="launch_xr" from="Launcher" to="." method="_on_launch_xr"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Launcher" parent="CanvasLayer" instance=ExtResource("2_ngvis")]
+
+[connection signal="launch_fps" from="CanvasLayer/Launcher" to="." method="_on_launch_fps"]
+[connection signal="launch_tps" from="CanvasLayer/Launcher" to="." method="_on_launch_tps"]
+[connection signal="launch_xr" from="CanvasLayer/Launcher" to="." method="_on_launch_xr"]

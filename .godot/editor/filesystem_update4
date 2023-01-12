@@ -1,3 +1,5 @@
-res://Levels/main.tscn
+res://Mode/3rdPersonController/ThirdPersonController.tscn
 res://Assets/Shaders/Water.tres
-res://Levels/BaseLevel.gd
+res://Mode/3rdPersonController/ThirdPersonController.gd
+res://Mode/3rdPersonController/SpringArm.gd
+res://Levels/main.tscn
