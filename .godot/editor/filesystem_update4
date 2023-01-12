@@ -1,4 +1,5 @@
-res://Mode/FlatMode/3rdPersonController/ThirdPersonController.tscn
+res://UI/Launcher/XRFlat_Launcher.gd
+res://UI/Launcher/XRFlat_Launcher.tscn
 res://Assets/Shaders/Water.tres
+res://Mode/FlatMode/3rdPersonController/ThirdPersonController.tscn
 res://Levels/Main/main.tscn
-res://Mode/FlatMode/FPSController/FPSController.tscn
