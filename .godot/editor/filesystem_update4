@@ -12,9 +12,3 @@ res://Mode/player_control_singleton.gd
 res://Mode/PlayerControlManager.tscn
 res://Mode/PlayerControlManager.gd
 res://Mode/FlatMode/FPSController/FPSController.tscn
-res://Assets/Characters/Mannequin/mannequiny.mesh
-res://Mode/FlatMode/3rdPersonController/ThirdPersonController.gd
-res://Mode/FlatMode/3rdPersonController/SpringArm.gd
-res://Mode/FlatMode/FPSController/FPSController.gd
-res://Assets/Characters/Mannequin/mannequiny.tscn
-res://Mode/XRMode/XRController/PlayerBody/player_body.tscn

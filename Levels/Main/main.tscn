@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dljqd4t82cnl4"]
+[gd_scene load_steps=8 format=3 uid="uid://dljqd4t82cnl4"]
 
 [ext_resource type="Script" path="res://Levels/BaseLevel.gd" id="1_g4ywr"]
+[ext_resource type="PackedScene" uid="uid://cr6l7lhloe0kt" path="res://Assets/Characters/Mannequin/mannequiny.tscn" id="2_3augp"]
 [ext_resource type="Shader" uid="uid://8ym8jl7ktm3u" path="res://Assets/Shaders/Water.tres" id="3_x3twi"]
 [ext_resource type="PackedScene" uid="uid://doxr3hbj6jlgf" path="res://UI/Launcher/XRFlat_Launcher.tscn" id="4_qac1c"]
 
@@ -22,6 +23,9 @@ autodetect_mode = false
 show_debugger = true
 
 [node name="World" type="Node" parent="."]
+
+[node name="Mannequiny" parent="World" instance=ExtResource("2_3augp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.105106, 0.401598, -2.14872)
 
 [node name="Floor" type="StaticBody3D" parent="."]
 
