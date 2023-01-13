@@ -12,27 +12,29 @@ extends BaseCharacterBodyController
 		if is_inside_tree():
 			_update_head_position()
 
+func _ready():
+	_update_head_position()
 
+# Updates the head position
 func _update_head_position():
 	head_position_node.transform.origin.z = eye_offset
 	if Engine.is_editor_hint():
 		camera_node.transform.origin.z = -eye_offset
 
-func _ready():
-	_update_head_position()
+func _physics_process(delta):
+	# Don't do this in editor
+	if Engine.is_editor_hint():
+		return
+
+	var colliding = _process_on_physical_movement(delta)
+	if !colliding: 
+		_process_on_player_input(delta)
 
 func _process_on_physical_movement(delta) -> bool:
 	# Remember our velocity we're not applying that on physical movement
 	var org_velocity = velocity
 
-	# Start by rotating the player to face the same way our real player is
-	var camera_basis : Basis = origin_node.transform.basis * camera_node.transform.basis
-	var forward : Vector2 = Vector2(camera_basis.z.x, camera_basis.z.z)
-	var angle : float = forward.angle_to(Vector2(0.0, 1.0))
-	# print(angle)
-	
-	transform.basis = transform.basis.rotated(Vector3.UP, angle)
-	origin_node.transform = Transform3D().rotated(Vector3.UP, -angle) * origin_node.transform
+	_sync_body_rotation_with_camera()
 
 	# Now apply movement, first move our player body to the right location
 	var org_player_body : Vector3 = global_transform.origin
@@ -66,6 +68,17 @@ func _process_on_physical_movement(delta) -> bool:
 
 	return colliding
 
+# Start by rotating the player to face the same way our real player is
+func _sync_body_rotation_with_camera():
+		# Start by rotating the player to face the same way our real player is
+	var camera_basis : Basis = origin_node.transform.basis * camera_node.transform.basis
+	var forward : Vector2 = Vector2(camera_basis.z.x, camera_basis.z.z)
+	var angle : float = forward.angle_to(Vector2(0.0, 1.0))
+	# print(angle)
+	
+	transform.basis = transform.basis.rotated(Vector3.UP, angle)
+	origin_node.transform = Transform3D().rotated(Vector3.UP, -angle) * origin_node.transform
+
 func _process_on_player_input(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -87,12 +100,3 @@ func _process_on_player_input(delta):
 		velocity.z = move_toward(velocity.z, 0, move_speed)
 
 	move_and_slide()
-
-func _physics_process(delta):
-	# Don't do this in editor
-	if Engine.is_editor_hint():
-		return
-
-	var colliding = _process_on_physical_movement(delta)
-	if !colliding:
-		_process_on_player_input(delta)

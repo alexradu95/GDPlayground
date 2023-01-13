@@ -15,9 +15,9 @@ func _input(event):
 		_rotate_camera_on_mouse_motion(event)
 
 func _rotate_camera_on_mouse_motion(event):
-		# We rotate the Node on it's Y axis
-		rotate_y(-event.relative.x * mouse_sensitivity)
-		# We rotate the Camera on X axis in order to not mess with the controls
-		$Camera3D.rotate_x(-event.relative.y * mouse_sensitivity)
-		# We clamp the rotation in order to not rotate indifently on vertical axis
-		$Camera3D.rotation.x = clamp($Camera3D.rotation.x, -PI/2, PI/2)
+	# We rotate the Node on it's Y axis
+	rotate_y(-event.relative.x * mouse_sensitivity)
+	# We rotate the Camera on X axis in order to not mess with the controls
+	$Camera3D.rotate_x(-event.relative.y * mouse_sensitivity)
+	# We clamp the rotation in order to not rotate indifently on vertical axis
+	$Camera3D.rotation.x = clamp($Camera3D.rotation.x, -PI/2, PI/2)
