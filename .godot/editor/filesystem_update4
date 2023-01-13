@@ -1,3 +1,4 @@
 res://Levels/Main/main.tscn
 res://Mode/XRMode/PlayerBody/player_body.tscn
 res://Mode/XRMode/PlayerBody/player_body.gd
+res://Mode/XRMode/PlayerBody/player_bod2y.tscn

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bxheovkr06arh"]
 
 [ext_resource type="Script" path="res://Levels/BaseLevel.gd" id="1_g4ywr"]
-[ext_resource type="PackedScene" uid="uid://mx8knhai12fc" path="res://Mode/XRMode/PlayerBody/player_body.tscn" id="4_8ds57"]
+[ext_resource type="PackedScene" uid="uid://c082ndn23s160" path="res://Mode/XRMode/PlayerBody/player_body.tscn" id="4_8ds57"]
 [ext_resource type="PackedScene" uid="uid://doxr3hbj6jlgf" path="res://UI/Launcher/XRFlat_Launcher.tscn" id="4_qac1c"]
 [ext_resource type="PackedScene" uid="uid://dnwx0vmtbf1ni" path="res://Assets/3D/mannequiny/mannequiny.tscn" id="5_vhngl"]
 
@@ -37,7 +37,7 @@ visible = false
 transform = Transform3D(1.00018, 0, 0, 0, 1, 0, 0, 0, 1.00018, -0.000388803, 0, 0.191007)
 
 [node name="XRCamera3D" parent="PlayerBody/XROrigin3D" index="0"]
-transform = Transform3D(0.99982, 0, 0, 0, 1, 0, 0, 0, 0.99982, 0, 1.6, -1.80901)
+transform = Transform3D(0.99982, 0, 0, 0, 1, 0, 0, 0, 0.99982, 0, 1.6, -0.1)
 
 [node name="LeftHand" type="MeshInstance3D" parent="PlayerBody/XROrigin3D/LeftHand" index="0"]
 transform = Transform3D(0.999817, 0, 0, 0, 1, 0, 0, 0, 0.999817, 0, 0, 0)
