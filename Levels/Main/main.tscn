@@ -52,7 +52,7 @@ directional_shadow_mode = 0
 transform = Transform3D(1.00018, 0, 0, 0, 1, 0, 0, 0, 1.00018, -0.000388803, 0, 0.191007)
 
 [node name="mannequiny-030" parent="PlayerBody/XROrigin3D/XRCamera3D" index="0" instance=ExtResource("5_vhngl")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -1.639, 0.406)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -1.639, -0.736959)
 
 [node name="LeftHand" type="MeshInstance3D" parent="PlayerBody/XROrigin3D/LeftHand" index="0"]
 transform = Transform3D(0.999817, 0, 0, 0, 1, 0, 0, 0, 0.999817, 0, 0, 0)
