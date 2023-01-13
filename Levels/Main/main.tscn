@@ -1,15 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxheovkr06arh"]
+[gd_scene load_steps=8 format=3 uid="uid://bxheovkr06arh"]
 
 [ext_resource type="Script" path="res://Levels/BaseLevel.gd" id="1_g4ywr"]
 [ext_resource type="PackedScene" uid="uid://mx8knhai12fc" path="res://Mode/XRMode/PlayerBody/player_body.tscn" id="4_8ds57"]
 [ext_resource type="PackedScene" uid="uid://doxr3hbj6jlgf" path="res://UI/Launcher/XRFlat_Launcher.tscn" id="4_qac1c"]
 [ext_resource type="PackedScene" uid="uid://dnwx0vmtbf1ni" path="res://Assets/3D/mannequiny/mannequiny.tscn" id="5_vhngl"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_vhc5q"]
-size = Vector2(4, 4)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_tuplw"]
-size = Vector3(20, 1, 20)
 
 [sub_resource type="BoxMesh" id="BoxMesh_kc5ys"]
 size = Vector3(0.2, 0.2, 0.2)
@@ -23,18 +17,8 @@ height = 1.8
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_g4ywr")
-autodetect_mode = false
+autodetect_mode = true
 show_debugger = true
-
-[node name="Floor" type="StaticBody3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
-mesh = SubResource("PlaneMesh_vhc5q")
-skeleton = NodePath("../CollisionShape3D")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.183055, 0)
-shape = SubResource("BoxShape3D_tuplw")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.696831, -0.620341, 0.360006, 0.552775, 0.784328, 0.28155, -0.45702, 0.00280985, 0.889452, 21.8489, 5.71373, 2.79827)
@@ -43,6 +27,7 @@ shadow_enabled = true
 directional_shadow_mode = 0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Launcher" parent="CanvasLayer" instance=ExtResource("4_qac1c")]
 
@@ -51,8 +36,8 @@ directional_shadow_mode = 0
 [node name="XROrigin3D" parent="PlayerBody" index="0"]
 transform = Transform3D(1.00018, 0, 0, 0, 1, 0, 0, 0, 1.00018, -0.000388803, 0, 0.191007)
 
-[node name="mannequiny-030" parent="PlayerBody/XROrigin3D/XRCamera3D" index="0" instance=ExtResource("5_vhngl")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -1.639, -0.736959)
+[node name="XRCamera3D" parent="PlayerBody/XROrigin3D" index="0"]
+transform = Transform3D(0.99982, 0, 0, 0, 1, 0, 0, 0, 0.99982, 0, 1.6, -1.80901)
 
 [node name="LeftHand" type="MeshInstance3D" parent="PlayerBody/XROrigin3D/LeftHand" index="0"]
 transform = Transform3D(0.999817, 0, 0, 0, 1, 0, 0, 0, 0.999817, 0, 0, 0)
@@ -71,9 +56,14 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -0.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.887336, 0.119129)
 shape = SubResource("CapsuleShape3D_55ot3")
 
-[connection signal="launch_fps" from="CanvasLayer/Launcher" to="." method="_on_launch_fps"]
-[connection signal="launch_tps" from="CanvasLayer/Launcher" to="." method="_on_launch_tps"]
-[connection signal="launch_xr" from="CanvasLayer/Launcher" to="." method="_on_launch_xr"]
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.67015, 0)
+use_collision = true
+size = Vector3(10, 10, 10)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28281, 0)
+operation = 2
+size = Vector3(9, 9.93, 9)
 
 [editable path="PlayerBody"]
-[editable path="PlayerBody/XROrigin3D/XRCamera3D/mannequiny-030"]

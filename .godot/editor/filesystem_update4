@@ -1,8 +1,3 @@
-res://Mode/FlatMode/FPSController/FPSController.tscn
-res://Assets/Shaders/Water.tres
-res://Mode/FlatMode/FPSController/FPSController.gd
-res://Mode/FlatMode/BaseFlatController.gd
+res://Levels/Main/main.tscn
 res://Mode/XRMode/PlayerBody/player_body.tscn
 res://Mode/XRMode/PlayerBody/player_body.gd
-res://Levels/Main/main.tscn
-res://Assets/3D/mannequiny/mannequiny.tscn

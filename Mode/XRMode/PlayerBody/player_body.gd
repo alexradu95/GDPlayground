@@ -11,9 +11,9 @@ func _process_on_physical_movement(delta) -> bool:
 
 	_handle_camera_rotation()
 	
-	var distance_between_bodies = _calculate_distance_between_bodies()
+	var distance_between_bodies : Vector3 = _calculate_distance_between_bodies()
 
-	_move_virtual_player_body(delta, distance_between_bodies)
+	_move_virtual_player_body(distance_between_bodies, delta)
 
 	_move_xr_origin_back_to_correct_possition()
 
@@ -25,13 +25,11 @@ func _process_on_physical_movement(delta) -> bool:
 
 	return isColliding
 	
-func _calculate_distance_between_bodies():
+func _calculate_distance_between_bodies() -> Vector3:
 		# Now apply movement, first move our player body to the right location
 	var virtual_player_body_global_location : Vector3 = global_transform.origin
 	var real_player_body_global_location : Vector3 = _calculate_real_life_body_global_position_in_scene()
-
 	return real_player_body_global_location - virtual_player_body_global_location
-
 	
 func _move_virtual_player_body(distance_between_bodies, delta) :
 
@@ -46,7 +44,7 @@ func _move_xr_origin_back_to_correct_possition():
 	$XROrigin3D.global_transform.origin += delta_movement
 	
 func _calculate_real_life_body_global_position_in_scene() -> Vector3:
-	var real_life_player_body : Vector3 = origin_node.transform * camera_node.transform
+	var real_life_player_body : Vector3 = origin_node.transform.origin * camera_node.transform.origin
 	real_life_player_body.y = 0.0 # we negate the player height right now, hmm, ok?
 	# maybe for this calculation
 	real_life_player_body = global_transform * real_life_player_body
@@ -64,16 +62,7 @@ func _handle_camera_rotation():
 	origin_node.transform = Transform3D().rotated(Vector3.UP, -angle) * origin_node.transform
 
 func _handle_fade_out(distance) -> bool:
-	var colliding = distance.length() > 0.01
-	if colliding:
-		var material : ShaderMaterial = blackout_node.get_surface_override_material(0)
-		if material:
-			var fade : float = clamp(distance * 10.0, 0.0, 1.0)
-			material.set_shader_parameter("fade", fade)
-		blackout_node.visible = true
-	else:
-		blackout_node.visible = false
-	return colliding
+	return distance.length() > 0.01
 
 func _process_on_player_input(delta):
 	# Add the gravity.
