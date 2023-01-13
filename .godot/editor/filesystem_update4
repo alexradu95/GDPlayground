@@ -4,3 +4,5 @@ res://Mode/FlatMode/FPSController/FPSController.gd
 res://Mode/FlatMode/BaseFlatController.gd
 res://Mode/XRMode/PlayerBody/player_body.tscn
 res://Mode/XRMode/PlayerBody/player_body.gd
+res://Levels/Main/main.tscn
+res://Assets/3D/mannequiny/mannequiny.tscn
