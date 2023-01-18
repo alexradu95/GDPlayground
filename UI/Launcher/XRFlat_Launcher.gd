@@ -13,13 +13,13 @@ signal launch_tps
 # Launch the XR scene
 func launch_xr_button_pressed():
 	emit_signal("launch_xr")
-	#self.hide()
-
+	get_parent().hide()
+	
 # Launch the Flat Scene
 func launch_fps_button_pressed():
 	emit_signal("launch_fps")
-	#self.hide()
+	get_parent().hide()
 	
 func launch_tps_button_pressed():
 	emit_signal("launch_tps")
-	#self.hide()
+	get_parent().hide()

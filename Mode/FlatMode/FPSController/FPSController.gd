@@ -1,3 +1,4 @@
+@tool
 extends BaseCharacterBodyController
 
 func _process(delta):

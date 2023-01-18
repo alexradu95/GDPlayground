@@ -4,7 +4,7 @@ extends Node3D
 @export var show_debugger : bool
 
 func _init():
-	pass
+	print("init")
 
 func _ready() :
 	if(autodetect_mode):

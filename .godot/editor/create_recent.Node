@@ -1,6 +1,8 @@
-CSGBox3D
-CollisionShape3D
 MeshInstance3D
+CollisionShape3D
+StaticBody3D
+Area3D
+CSGBox3D
 BaseCharacterBodyController
 SpringArm3D
 Node3D
@@ -10,7 +12,6 @@ Button
 Camera3D
 CharacterBody3D
 Label3D
-StaticBody3D
 DirectionalLight3D
 RigidBody3D
 Node

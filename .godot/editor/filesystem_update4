@@ -1,4 +1,5 @@
-res://Levels/Main/main.tscn
 res://Mode/XRMode/PlayerBody/player_body.tscn
-res://Mode/XRMode/PlayerBody/player_body.gd
-res://Mode/XRMode/PlayerBody/player_bod2y.tscn
+res://Levels/Main/main.tscn
+res://Mode/FlatMode/FPSController/FPSController.tscn
+res://Mode/FlatMode/FPSController/FPSController.gd
+res://Mode/FlatMode/3rdPersonController/ThirdPersonController.tscn
