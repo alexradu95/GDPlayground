@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b330tvj8skr6t"]
+[gd_scene load_steps=5 format=3 uid="uid://lnfq2rjghy8f"]
 
-[ext_resource type="Script" path="res://Mode/FlatMode/3rdPersonController/ThirdPersonController.gd" id="1_4hlc6"]
-[ext_resource type="Script" path="res://Mode/FlatMode/3rdPersonController/SpringArm.gd" id="2_vah68"]
+[ext_resource type="Script" path="res://players/flat_3rd_person/ThirdPersonController.gd" id="1_4hlc6"]
+[ext_resource type="Script" path="res://players/flat_3rd_person/SpringArm.gd" id="2_vah68"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_fshq3"]
 

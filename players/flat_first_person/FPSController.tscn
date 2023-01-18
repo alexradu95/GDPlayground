@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0i5gsgfd78id"]
+[gd_scene load_steps=4 format=3]
 
-[ext_resource type="Script" path="res://Mode/FlatMode/FPSController/FPSController.gd" id="1_0dcde"]
+[ext_resource type="Script" path="res://players/flat_first_person/FPSController.gd" id="1_0dcde"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_fhhxc"]
 

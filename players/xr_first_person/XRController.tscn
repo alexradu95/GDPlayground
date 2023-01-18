@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://c082ndn23s160"]
+[gd_scene load_steps=7 format=3 uid="uid://c63aqoxee7qxh"]
 
-[ext_resource type="Script" path="res://Mode/XRMode/PlayerBody/player_body.gd" id="1_n4wh1"]
+[ext_resource type="Script" path="res://players/xr_first_person/XRController.gd" id="1_n4wh1"]
 [ext_resource type="Shader" path="res://PlayerBody/blackout.gdshader" id="2_5p8ux"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ns80u"]
@@ -11,8 +11,8 @@ render_priority = 99
 shader = ExtResource("2_5p8ux")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y04l7"]
-radius = 0.4
-height = 1.8
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qrsf7"]
 
 [node name="PlayerBody" type="CharacterBody3D"]
 script = ExtResource("1_n4wh1")
@@ -43,5 +43,9 @@ tracker = &"right_hand"
 pose = &"aim"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_y04l7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_qrsf7")

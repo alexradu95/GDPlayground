@@ -9,16 +9,16 @@ extends Node
 
 
 func _instantiate_xr_controller() -> Node3D:
-	var xrControllerResource = load("res://Mode/XRMode/PlayerBody/player_body.tscn")
+	var xrControllerResource = load("res://players/xr_first_person/XRController.tscn")
 	return xrControllerResource.instantiate()
 
 func _instantiate_fps_controller() -> Node3D:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	var fpsControllerResource : Resource = load("res://Mode/FlatMode/FPSController/FPSController.tscn")
+	var fpsControllerResource : Resource = load("res://players/flat_first_person/FPSController.tscn")
 	return fpsControllerResource.instantiate()
 	
 func _instantiate_tps_controller() -> Node3D:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	var fpsControllerResource : Resource = load("res://Mode/FlatMode/3rdPersonController/ThirdPersonController.tscn")
+	var fpsControllerResource : Resource = load("res://players/flat_3rd_person/ThirdPersonController.tscn")
 	return fpsControllerResource.instantiate()
 

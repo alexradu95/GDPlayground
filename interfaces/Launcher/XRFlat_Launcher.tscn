@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://doxr3hbj6jlgf"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://UI/Launcher/XRFlat_Launcher.gd" id="1_e70id"]
+[ext_resource type="Script" path="res://interfaces/Launcher/XRFlat_Launcher.gd" id="1_e70id"]
 
 [sub_resource type="Theme" id="1"]
 

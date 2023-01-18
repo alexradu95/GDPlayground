@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxheovkr06arh"]
+[gd_scene load_steps=5 format=3 uid="uid://d2sdxcffe7agv"]
 
-[ext_resource type="Script" path="res://Levels/BaseLevel.gd" id="1_g4ywr"]
-[ext_resource type="PackedScene" uid="uid://doxr3hbj6jlgf" path="res://UI/Launcher/XRFlat_Launcher.tscn" id="4_qac1c"]
+[ext_resource type="Script" path="res://scenes/BaseLevel.gd" id="1_wr4uf"]
+[ext_resource type="PackedScene" path="res://interfaces/Launcher/XRFlat_Launcher.tscn" id="2_nuqen"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vagd6"]
 size = Vector3(20, 1, 20)
@@ -10,7 +10,7 @@ size = Vector3(20, 1, 20)
 size = Vector3(20, 1, 20)
 
 [node name="Main" type="Node3D"]
-script = ExtResource("1_g4ywr")
+script = ExtResource("1_wr4uf")
 show_debugger = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -21,7 +21,7 @@ directional_shadow_mode = 0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Launcher" parent="CanvasLayer" instance=ExtResource("4_qac1c")]
+[node name="Launcher" parent="CanvasLayer" instance=ExtResource("2_nuqen")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
