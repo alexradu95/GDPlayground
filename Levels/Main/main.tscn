@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxheovkr06arh"]
+[gd_scene load_steps=5 format=3 uid="uid://bxheovkr06arh"]
 
 [ext_resource type="Script" path="res://Levels/BaseLevel.gd" id="1_g4ywr"]
-[ext_resource type="PackedScene" uid="uid://b330tvj8skr6t" path="res://Mode/FlatMode/3rdPersonController/ThirdPersonController.tscn" id="3_oxa74"]
 [ext_resource type="PackedScene" uid="uid://doxr3hbj6jlgf" path="res://UI/Launcher/XRFlat_Launcher.tscn" id="4_qac1c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vagd6"]
@@ -13,8 +12,6 @@ size = Vector3(20, 1, 20)
 [node name="Main" type="Node3D"]
 script = ExtResource("1_g4ywr")
 show_debugger = true
-
-[node name="ThirdPersonController" parent="." instance=ExtResource("3_oxa74")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.696831, -0.620341, 0.360006, 0.552775, 0.784328, 0.28155, -0.45702, 0.00280985, 0.889452, 21.8489, 5.71373, 2.79827)

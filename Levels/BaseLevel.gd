@@ -10,7 +10,7 @@ func _ready() :
 	if(autodetect_mode):
 		# Launch XR if it can be initialized, otherwise launch flat
 		print("Autodetecting XR or non-XR mode on whether a headset is connected...")
-		var xr_interface := XRServer.find_interface("OpenXR")
+		var xr_interface := XRServer.find_interface("WebXR")
 		if xr_interface and xr_interface.initialize():
 			_on_launch_xr()
 		else:
@@ -22,7 +22,7 @@ func _ready() :
 func _connect_signals() :
 	$CanvasLayer/Launcher.launch_xr.connect(_on_launch_xr)
 	$CanvasLayer/Launcher.launch_fps.connect(_on_launch_fps)
-	$CanvasLayer/Launcher.launch_fps.connect(_on_launch_fps)
+	$CanvasLayer/Launcher.launch_tps.connect(_on_launch_tps)
 	
 func _on_launch_xr() -> void:
 	var xr_interface: XRInterface = XRServer.find_interface("OpenXR")

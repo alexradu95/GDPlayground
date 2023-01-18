@@ -3,6 +3,7 @@ extends BaseCharacterBodyController
 func _process(delta) :
 	# We sync the SpringArm ( that contains the camera ) with the player position
 	$SpringArm.position = position
+	print(transform.origin)
 
 func _physics_process(delta):
 	handle_movement(delta)

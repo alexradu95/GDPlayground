@@ -1,18 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b330tvj8skr6t"]
+[gd_scene load_steps=5 format=3 uid="uid://b330tvj8skr6t"]
 
 [ext_resource type="Script" path="res://Mode/FlatMode/3rdPersonController/ThirdPersonController.gd" id="1_4hlc6"]
 [ext_resource type="Script" path="res://Mode/FlatMode/3rdPersonController/SpringArm.gd" id="2_vah68"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_th0y7"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_fshq3"]
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_bvaaf"]
-top_radius = 0.1
-bottom_radius = 0.2
-height = 1.0
-radial_segments = 4
-rings = 1
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3krgq"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ognhf"]
 
 [node name="ThirdPersonController" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -20,18 +13,11 @@ script = ExtResource("1_4hlc6")
 move_speed = 4
 mouse_sensitivity = 0.05
 
-[node name="Model" type="Node3D" parent="."]
+[node name="Model" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_fshq3")
 
-[node name="Body" type="MeshInstance3D" parent="Model"]
-mesh = SubResource("CapsuleMesh_th0y7")
-skeleton = NodePath("../..")
-
-[node name="Nose" type="MeshInstance3D" parent="Model"]
-transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, -1, -8.74228e-08, -1, -4.37114e-08, 0, 0.206676, -0.90881)
-mesh = SubResource("CylinderMesh_bvaaf")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_3krgq")
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ognhf")
 
 [node name="SpringArm" type="SpringArm3D" parent="."]
 spring_length = 7.0
