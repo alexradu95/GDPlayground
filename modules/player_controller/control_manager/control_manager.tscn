@@ -6,6 +6,7 @@
 
 [node name="ControlManager" type="CanvasLayer"]
 script = ExtResource("1_5uxpw")
+autoxr = true
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 15

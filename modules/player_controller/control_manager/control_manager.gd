@@ -2,6 +2,8 @@
 class_name PlayerControlManager
 extends CanvasLayer
 
+@export var autoxr : bool
+
 signal launch_xr
 signal launch_fps
 signal launch_tps
@@ -35,12 +37,16 @@ func _initialize_openxr():
 				$Panel/HBoxContainer/XR.set_text("Play OpenXR")
 			else:
 				print("OpenXR: Failed to initialize")
+		else:
+			print("OpenXR: Initialized succesfully")
+			supportedXR = XRType.OPENXR
+			$Panel/HBoxContainer/XR.set_text("Play OpenXR")
 	else:
 		print("OpenXR: Could not find OpenXR Interface")
 
 func _initialize_webxr():
 	print("WebXR: Configuring interface")
-	var webxr_interface : WebXRInterface = XRServer.find_interface("WebXR")
+	webxr_interface = XRServer.find_interface("WebXR")
 	
 	if webxr_interface:
 		print("WebXR: webxr_interface found")
@@ -83,7 +89,6 @@ func launch_tps_button_pressed():
 func launch_xr_button_pressed():
 	
 	hide()
-	
 	if(supportedXR == XRType.WEBXR):
 		# We want an immersive VR session, as opposed to AR ('immersive-ar') or a
 		# simple 3DoF viewer ('viewer').
