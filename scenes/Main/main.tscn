@@ -7,6 +7,7 @@
 [node name="Main" type="Node3D"]
 
 [node name="PlayerController" parent="." instance=ExtResource("1_0jths")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00758171, 1.03653, -0.0448151)
 
 [node name="World" type="Node" parent="."]
 
@@ -22,7 +23,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 use_collision = true
 collision_layer = 4294967295
 collision_mask = 4294967295
-size = Vector3(20, 1, 20)
+size = Vector3(20, 1.5, 20)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.255594, 0)
+operation = 2
+size = Vector3(19, 1, 19)
 
 [node name="Label3D" type="Label3D" parent="World"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 27.8422)

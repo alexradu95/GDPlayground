@@ -1,7 +1,7 @@
+CSGBox3D
 Label3D
 Node
 WorldEnvironment
-CSGBox3D
 CollisionShape3D
 MeshInstance3D
 Area3D
