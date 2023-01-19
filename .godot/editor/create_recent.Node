@@ -1,9 +1,9 @@
+MeshInstance3D
 CSGBox3D
 Label3D
 Node
 WorldEnvironment
 CollisionShape3D
-MeshInstance3D
 Area3D
 Camera3D
 CanvasLayer

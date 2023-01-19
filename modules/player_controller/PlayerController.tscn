@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bun57nhc5go62"]
+[gd_scene load_steps=6 format=3 uid="uid://bun57nhc5go62"]
 
 [ext_resource type="Script" path="res://modules/player_controller/PlayerController.gd" id="1_oc4u0"]
 [ext_resource type="PackedScene" uid="uid://c7p1t4jn8nriu" path="res://modules/player_controller/control_manager/control_manager.tscn" id="2_xdfle"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_fhhxc"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kh7o1"]
+top_radius = 0.05
+bottom_radius = 0.1
+height = 1.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gnpq6"]
 
@@ -16,6 +21,10 @@ script = ExtResource("1_oc4u0")
 
 [node name="MeshInstance" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_fhhxc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance"]
+transform = Transform3D(1, 0, 0, 0, 0.0685725, 0.997646, 0, -0.997646, 0.0685725, 0, 0.515072, -0.582842)
+mesh = SubResource("CylinderMesh_kh7o1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_gnpq6")

@@ -1,7 +1,7 @@
 extends XROrigin3D
 
 @onready var player_node = get_parent()
-@onready var origin_node = self
+@onready var origin_node : XROrigin3D = self
 @onready var camera_node = $XRCamera3D
 @onready var head_position_node = $XRCamera3D/HeadPosition
 
@@ -18,7 +18,7 @@ func _update_head_position():
 func _ready():
 	_update_head_position()
 
-func _process_on_physical_movement(delta) -> bool:
+func _process_on_physical_movement(delta):
 	# Remember our velocity we're not applying that on physical movement
 	var org_velocity = player_node.velocity
 
@@ -32,16 +32,16 @@ func _process_on_physical_movement(delta) -> bool:
 	origin_node.transform = Transform3D().rotated(Vector3.UP, -angle) * origin_node.transform
 
 	# Now apply movement, first move our player body to the right location
-	var org_player_body : Vector3 = player_node.global_transform.origin
-	var player_body_location : Vector3 = origin_node.transform * camera_node.transform * head_position_node.transform.origin
-	player_body_location.y = 0.0
-	player_body_location = player_node.global_transform * player_body_location
+	var virtual_player_body_global : Vector3 = player_node.global_transform.origin
+	var real_player_body_global : Vector3 = origin_node.transform * camera_node.transform * head_position_node.transform.origin
+	real_player_body_global.y = 0.0
+	real_player_body_global = player_node.global_transform * real_player_body_global
 
-	player_node.velocity = (player_body_location - org_player_body) / delta
+	player_node.velocity = (real_player_body_global - virtual_player_body_global) / delta
 	get_parent().move_and_slide()
 
 	# Now move our XROrigin back
-	var delta_movement = org_player_body - player_node.global_transform.origin
+	var delta_movement = virtual_player_body_global - player_node.global_transform.origin
 	delta_movement.y = 0.0
 	origin_node.global_transform.origin += delta_movement
 
@@ -49,9 +49,13 @@ func _process_on_physical_movement(delta) -> bool:
 	player_node.velocity = org_velocity
 
 	# Adjust our fade
-	var distance : float = (player_body_location - org_player_body).length()
-	var colliding = distance > 0.01
-	return colliding
+	var distance : float = (real_player_body_global - virtual_player_body_global).length()
+	var colliding = distance > 1
+	if(distance > 1):
+		# Reset the player origin to PlayerBody
+		camera_node.transform.origin = Vector3.ZERO
+	elif(distance > 0.2):
+		print("GO BACK TO YOUR REAL BODY, OR ELSE WE WILL FORCE MOVE YOU")
 
 func _physics_process(delta):
 	_process_on_physical_movement(delta)
