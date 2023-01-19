@@ -25,14 +25,16 @@ func _initialize_openxr():
 	print("OpenXR: Configuring interface")
 	var xr_interface : OpenXRInterface = XRServer.find_interface('OpenXR')
 	if xr_interface:
+		print("OpenXR: XRInterace Available")
 		# Initialize the OpenXR interface
 		if not xr_interface.is_initialized():
 			print("OpenXR: Initializing interface")
 			if xr_interface.initialize():
+				print("OpenXR: Initialized succesfully")
 				supportedXR = XRType.OPENXR
-				$Panel/HBoxContainer/XR.text = "Play OpenXR"
+				$Panel/HBoxContainer/XR.set_text("Play OpenXR")
 			else:
-				push_error("OpenXR: Failed to initialize")
+				print("OpenXR: Failed to initialize")
 	else:
 		print("OpenXR: Could not find OpenXR Interface")
 
@@ -55,16 +57,17 @@ func _initialize_webxr():
 		# be called sometime later to let us know if it's supported or not.
 		webxr_interface.is_session_supported("immersive-vr")
 	else:
-		print("WebXR: Could not find OpenXR Interface")
+		print("WebXR: Could not find WebXR Interface")
 		
 func _on_webxr_session_supported(session_mode: String, supported: bool) -> void:
 	if session_mode == "immersive-vr":
 		if supported:
+			print("WebXR: immersive-vr is supported")
 			supportedXR = XRType.WEBXR
-			$Panel/HBoxContainer/XR.text = "Play WebXR"
+			$Panel/HBoxContainer/XR.set_text("Play WebXR")
 		else:
-			print("WebXR: Failed to configure interface even if thought webXr interface is present")
-			$Panel/HBoxContainer/XR.text = "The browser does not support WebXR"
+			print("WebXR: immersive-vr not supported supported")
+			$Panel/HBoxContainer/XR.set_text("The browser does not support WebXR")
 			$Panel/HBoxContainer/XR.disabled = true
 
 # Launch the Flat Scene
