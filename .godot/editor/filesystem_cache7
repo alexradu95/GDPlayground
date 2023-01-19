@@ -1,6 +1,5 @@
 0b7126e0c6e86d3ec295a72f5aa6e0bd
-::res://::1674138451
-export_presets.cfg::TextFile::-1::1674138384::0::1::::<><>::
+::res://::1674141152
 icon.svg::CompressedTexture2D::7229204073244937113::1673425853::1673474074::1::::<><>::
 openxr_action_map.tres::OpenXRActionMap::6735525097580812850::1674122803::0::1::::<><>::
 readme.md::TextFile::-1::1673425853::0::1::::<><>::
@@ -22,10 +21,10 @@ mannequiny.tscn::PackedScene::-1::1674125542::0::1::::<><>::uid://dc2oc0ntjhb7a
 Negro.material::StandardMaterial3D::-1::1673619689::0::1::::<><>::
 ::res://assets/shaders/::1673619717
 Water.tres::VisualShader::2366564932435620852::1673619717::0::1::::<><>::
-::res://docs/::1674122826
-index.apple-touch-icon.png::CompressedTexture2D::2580322095809518189::1674122802::1674122826::1::::<><>::
-index.icon.png::CompressedTexture2D::5971729323861502462::1674122802::1674122826::1::::<><>::
-index.png::CompressedTexture2D::3981667803545511194::1674122803::1674122826::1::::<><>::
+::res://docs/::1674140997
+index.apple-touch-icon.png::CompressedTexture2D::2580322095809518189::1674140997::1674122826::1::::<><>::
+index.icon.png::CompressedTexture2D::5971729323861502462::1674140997::1674122826::1::::<><>::
+index.png::CompressedTexture2D::3981667803545511194::1674140997::1674122826::1::::<><>::
 ::res://modules/::1674129961
 ::res://modules/player_controller/::1674138038
 BaseLevel.gd::GDScript::-1::1674129339::0::1::::<>Node3D<>::
@@ -34,9 +33,9 @@ PlayerController.tscn::PackedScene::3818913816192873217::1674137472::0::1::::<><
 ::res://modules/player_controller/control_manager/::1674136527
 control_manager.gd::GDScript::-1::1674136527::0::1::::PlayerControlManager<>CanvasLayer<>::
 control_manager.tscn::PackedScene::7051464139725940544::1674135112::0::1::::<><>::res://modules/player_controller/control_manager/control_manager.gd
-::res://modules/player_controller/flat_3rd_person/::1674138284
+::res://modules/player_controller/flat_3rd_person/::1674141000
 3rd_person_camera.gd::GDScript::-1::1674138076::0::1::::<>Node3D<>::
-3rd_person_camera.tscn::PackedScene::5949106800997598730::1674138284::0::1::::<><>::res://modules/player_controller/flat_3rd_person/3rd_person_camera.gd
+3rd_person_camera.tscn::PackedScene::5949106800997598730::1674141000::0::1::::<><>::res://modules/player_controller/flat_3rd_person/3rd_person_camera.gd
 ::res://modules/player_controller/flat_first_person/::1674137977
 1st_person_camera.gd::GDScript::-1::1674137977::0::1::::<>Camera3D<>::
 1st_person_camera.tscn::PackedScene::7805067841984558926::1674137166::0::1::::<><>::res://modules/player_controller/flat_first_person/1st_person_camera.gd
@@ -54,5 +53,5 @@ VR_DirectMovement.gd::GDScript::-1::1674122803::0::1::::<>XRController3D<>::
 VR_Rotate.gd::GDScript::-1::1674122803::0::1::::<>XRController3D<>::
 ::res://scenes/::1674138374
 export_presets.cfg::TextFile::-1::1674138374::0::1::::<><>::
-::res://scenes/main/::1674138419
-main.tscn::PackedScene::6089411899592698673::1674138419::0::1::::<><>::uid://bun57nhc5go62
+::res://scenes/main/::1674141000
+main.tscn::PackedScene::6089411899592698673::1674141000::0::1::::<><>::uid://bun57nhc5go62
