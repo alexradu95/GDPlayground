@@ -12,6 +12,8 @@ var availableXRMode : XRMode = XRMode.NONE
 # Launch the XR scene
 func launch_xr_button_pressed():
 	self.launch_xr.emit(availableXRMode)
+	var vp : Viewport = get_viewport()
+	vp.use_xr = true
 	hide()
 	
 # Launch the Flat Scene

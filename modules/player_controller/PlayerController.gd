@@ -50,5 +50,3 @@ func _inject_xr_fps(mode):
 	var xrControllerResource = load("res://modules/player_controller/xr_first_person/xr_origin_3d.tscn")
 	var xrControllerCamera =  xrControllerResource.instantiate()
 	self.add_child(xrControllerCamera)
-
-

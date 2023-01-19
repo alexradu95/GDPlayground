@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://cs00yvkmkodxh"]
+[gd_scene load_steps=3 format=3 uid="uid://bfxi5xb8kotnx"]
 
-[ext_resource type="PackedScene" uid="uid://bun57nhc5go62" path="res://modules/player_controller/PlayerController.tscn" id="1_0jths"]
+[ext_resource type="PackedScene" uid="uid://bun57nhc5go62" path="res://modules/player_controller/PlayerController.tscn" id="1_8joxa"]
 
 [sub_resource type="Environment" id="Environment_o2xlo"]
 
 [node name="Main" type="Node3D"]
 
-[node name="PlayerController" parent="." instance=ExtResource("1_0jths")]
+[node name="PlayerController" parent="." instance=ExtResource("1_8joxa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00758171, 1.03653, -0.0448151)
 
 [node name="World" type="Node" parent="."]
