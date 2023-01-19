@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://djg3lebklxyd7"]
+
+[ext_resource type="Script" path="res://modules/player_controller/flat_first_person/1st_person_camera.gd" id="1_ha66n"]
+
+[node name="Camera3D" type="Camera3D"]
+script = ExtResource("1_ha66n")

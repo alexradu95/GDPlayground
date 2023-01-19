@@ -8,15 +8,17 @@
 
 [node name="PlayerController" parent="." instance=ExtResource("1_0jths")]
 
-[node name="Floor" type="CSGBox3D" parent="."]
+[node name="World" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World"]
+environment = SubResource("Environment_o2xlo")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 53.3547, 0)
+shadow_enabled = true
+
+[node name="Floor" type="CSGBox3D" parent="World"]
 use_collision = true
 collision_layer = 4294967295
 collision_mask = 4294967295
 size = Vector3(20, 1, 20)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_o2xlo")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 53.3547, 0)
-shadow_enabled = true

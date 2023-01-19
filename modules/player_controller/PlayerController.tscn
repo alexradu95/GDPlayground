@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bun57nhc5go62"]
+
+[ext_resource type="Script" path="res://modules/player_controller/PlayerController.gd" id="1_oc4u0"]
+[ext_resource type="PackedScene" uid="uid://c7p1t4jn8nriu" path="res://modules/player_controller/control_manager/control_manager.tscn" id="2_xdfle"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_fhhxc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gnpq6"]
+
+[node name="PlayerController" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+velocity = Vector3(0, -557.729, 0)
+script = ExtResource("1_oc4u0")
+
+[node name="ControlManager" parent="." instance=ExtResource("2_xdfle")]
+
+[node name="MeshInstance" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_fhhxc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_gnpq6")
+
+[connection signal="launch_fps" from="ControlManager" to="." method="_inject_flat_fps"]
+[connection signal="launch_tps" from="ControlManager" to="." method="_inject_flat_tps"]
+[connection signal="launch_xr" from="ControlManager" to="." method="_inject_xr_fps"]

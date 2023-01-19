@@ -1,10 +1,10 @@
+Node
 WorldEnvironment
 CSGBox3D
 CollisionShape3D
 MeshInstance3D
 Area3D
 Camera3D
-Node
 CanvasLayer
 Control
 StaticBody3D
