@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://1xij45b3e78t"]
-
-[ext_resource type="PackedScene" uid="uid://cw11yce02d660" path="res://players/base_controller_person/BaseController.tscn" id="1_4y4nl"]
-
-[node name="FPSController" instance=ExtResource("1_4y4nl")]
-
-[node name="Camera3D" type="Camera3D" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3]
 
-[ext_resource type="PackedScene" uid="uid://dc2oc0ntjhb7a" path="res://assets/3D/mannequiny/mannequiny-0.3.0.glb" id="1_qj2ux"]
+[ext_resource type="PackedScene" uid="uid://dc2oc0ntjhb7a" path="res://assets/3d/mannequiny/mannequiny-0.3.0.glb" id="1_qj2ux"]
 
 [node name="mannequiny-030" instance=ExtResource("1_qj2ux")]
 
