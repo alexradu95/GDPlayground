@@ -13,12 +13,10 @@ func _instantiate_xr_controller() -> Node3D:
 	return xrControllerResource.instantiate()
 
 func _instantiate_fps_controller() -> Node3D:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	var fpsControllerResource : Resource = load("res://players/flat_first_person/FPSController.tscn")
 	return fpsControllerResource.instantiate()
 	
 func _instantiate_tps_controller() -> Node3D:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	var fpsControllerResource : Resource = load("res://players/flat_3rd_person/ThirdPersonController.tscn")
 	return fpsControllerResource.instantiate()
 

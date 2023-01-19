@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://c1qio3jytl120"]
 
 [ext_resource type="Script" path="res://interfaces/Launcher/XRFlat_Launcher.gd" id="1_e70id"]
 
@@ -14,38 +14,34 @@ grow_vertical = 2
 script = ExtResource("1_e70id")
 
 [node name="Panel" type="Panel" parent="."]
-anchors_preset = 15
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 size_flags_vertical = 3
 
 [node name="XR" type="Button" parent="Panel/HBoxContainer"]
-offset_right = 381.0
-offset_bottom = 648.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource("1")
 text = "XR"
 
 [node name="FirstPerson" type="Button" parent="Panel/HBoxContainer"]
-offset_left = 385.0
-offset_right = 766.0
-offset_bottom = 648.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource("1")
 text = "Flat"
 
 [node name="ThirdPerson" type="Button" parent="Panel/HBoxContainer"]
-offset_left = 770.0
-offset_right = 1152.0
-offset_bottom = 648.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource("1")

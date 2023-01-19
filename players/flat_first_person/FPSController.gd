@@ -1,4 +1,3 @@
-@tool
 extends BaseCharacterBodyController
 
 func _process(delta):
@@ -7,6 +6,7 @@ func _process(delta):
 func _physics_process(delta):
 	handle_movement(delta)
 	handle_jumping(delta)
+	toggle_mouse_capture()
 	move_and_slide()
 	
 # This is called everytime there is any kind input:

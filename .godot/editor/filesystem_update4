@@ -1,6 +1,11 @@
 res://players/flat_3rd_person/ThirdPersonController.tscn
+res://players/flat_3rd_person/ThirdPersonController.gd
+res://players/flat_first_person/FPSController.gd
 res://scenes/Main/main.tscn
+res://interfaces/Launcher/XRFlat_Launcher.tscn
 res://players/PlayerControlManager.gd
-res://scenes/BaseLevel.gd
-res://players/xr_first_person/XRController.tscn
-res://userSettings.gd
+res://players/base_controller_person/BaseController.tscn
+res://players/flat_first_person/FPSController2.tscn
+res://players/flat_first_person/FPSController.tscn
+res://players/flat_3rd_person/TPSController.tscn
+res://players/base_controller_person/BaseController.gd

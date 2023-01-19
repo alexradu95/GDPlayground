@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d2sdxcffe7agv"]
 
 [ext_resource type="Script" path="res://scenes/BaseLevel.gd" id="1_wr4uf"]
-[ext_resource type="PackedScene" path="res://interfaces/Launcher/XRFlat_Launcher.tscn" id="2_nuqen"]
+[ext_resource type="PackedScene" uid="uid://c1qio3jytl120" path="res://interfaces/Launcher/XRFlat_Launcher.tscn" id="2_nuqen"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vagd6"]
 size = Vector3(20, 1, 20)
