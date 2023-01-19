@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://cge0fq8mxwba7"]
+
+[ext_resource type="Shader" path="res://PlayerBody/blackout.gdshader" id="1_8ktss"]
+[ext_resource type="Script" path="res://modules/player_controller/xr_first_person/xr_origin_3d.gd" id="1_njwcb"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ns80u"]
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lhn3a"]
+render_priority = 99
+shader = ExtResource("1_8ktss")
+
+[node name="XROrigin3D" type="XROrigin3D"]
+script = ExtResource("1_njwcb")
+
+[node name="XRCamera3D" type="XRCamera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, -0.1)
+cull_mask = 1047551
+
+[node name="HeadPosition" type="Node3D" parent="XRCamera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0.1)
+
+[node name="BlackOut" type="MeshInstance3D" parent="XRCamera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.54542)
+layers = 512
+mesh = SubResource("QuadMesh_ns80u")
+surface_material_override/0 = SubResource("ShaderMaterial_lhn3a")
+
+[node name="LeftHand" type="XRController3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
+tracker = &"left_hand"
+pose = &"aim"
+
+[node name="RightHand" type="XRController3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
+tracker = &"right_hand"
+pose = &"aim"

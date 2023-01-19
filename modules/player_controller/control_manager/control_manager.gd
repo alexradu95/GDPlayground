@@ -33,7 +33,8 @@ func _ready() -> void:
 		availableXRMode = XRMode.WEBXR
 	# Show only flatscreen if no XR interface available
 	if(	availableXRMode == XRMode.NONE ) :
-		$Panel/HBoxContainer/XR.visible = false
+		print("No XRMode available")
+		#$Panel/HBoxContainer/XR.visible = false
 
 # Perform OpenXR setup
 func _try_initialize_openxr() -> bool:

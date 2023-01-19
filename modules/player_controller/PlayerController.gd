@@ -47,7 +47,8 @@ func _inject_flat_tps():
 
 func _inject_xr_fps(mode):
 	print(mode)
-	var xrControllerResource = load("res://players/xr_first_person/XRController.tscn")
-	return xrControllerResource.instantiate()
+	var xrControllerResource = load("res://modules/player_controller/xr_first_person/xr_origin_3d.tscn")
+	var xrControllerCamera =  xrControllerResource.instantiate()
+	self.add_child(xrControllerCamera)
 
 
