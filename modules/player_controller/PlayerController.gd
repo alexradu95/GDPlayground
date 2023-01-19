@@ -26,9 +26,7 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-		
-	print(transform)
-
+	
 	move_and_slide()
 
 func _inject_flat_fps():
@@ -45,8 +43,7 @@ func _inject_flat_tps():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 
-func _inject_xr_fps(mode):
-	print(mode)
+func _inject_xr_fps():
 	var xrControllerResource = load("res://modules/player_controller/xr_first_person/xr_origin_3d.tscn")
 	var xrControllerCamera =  xrControllerResource.instantiate()
 	self.add_child(xrControllerCamera)

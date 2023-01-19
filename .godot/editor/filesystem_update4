@@ -3,3 +3,5 @@ res://modules/player_controller/PlayerController.gd
 res://scenes/main.tscn
 res://modules/player_controller/xr_first_person/xr_origin_3d.tscn
 res://modules/player_controller/xr_first_person/xr_origin_3d.gd
+res://modules/player_controller/control_manager/control_manager.gd
+res://modules/player_controller/control_manager/control_manager.tscn
