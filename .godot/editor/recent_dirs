@@ -1,9 +1,8 @@
 E:/Development/Projects/Godot4/GDPlayground/docs
+res://modules/player_controller/base_controller
+res://modules/player_controller/xr_controller
 res://scenes
-res://modules/player_controller/xr_first_person
 res://
-res://modules/player_controller/flat_first_person
-res://modules/player_controller/flat_3rd_person
 res://modules/player_controller
 res://Assets/3D/mannequiny
 res://Assets/Shaders

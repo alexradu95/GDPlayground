@@ -28,22 +28,3 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
 	move_and_slide()
-
-func _inject_flat_fps():
-	var fpsControllerResource : Resource = load("res://modules/player_controller/flat_first_person/1st_person_camera.tscn")
-	var fpsCamera = fpsControllerResource.instantiate()
-	self.add_child(fpsCamera)
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
-
-func _inject_flat_tps():
-	var tpsControllerResource : Resource = load("res://modules/player_controller/flat_3rd_person/3rd_person_camera.tscn")
-	var thirdPersonCamera = tpsControllerResource.instantiate()
-	self.add_child(thirdPersonCamera)
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
-
-func _inject_xr_fps():
-	var xrControllerResource = load("res://modules/player_controller/xr_first_person/xr_origin_3d.tscn")
-	var xrControllerCamera =  xrControllerResource.instantiate()
-	self.add_child.call_deferred(xrControllerCamera)
