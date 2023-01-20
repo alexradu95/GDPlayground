@@ -50,12 +50,14 @@ func _on_web_xr_availability(webXrAvailability: bool):
 	if(webXrAvailability):
 		print("WebXR Interface is available")
 		supportedXR = xrType.WEBXR
+		$PlayerControlUI/Panel/HBoxContainer/XR_Button.disabled = false
 		$PlayerControlUI/Panel/HBoxContainer/XR_Button.set_text("WebXR")
 
 func _on_open_xr_availability(openXrAvailability : bool):
 	if(openXrAvailability):
 		print("OpenXR Interface is available")
 		supportedXR = xrType.OPENXR
+		$PlayerControlUI/Panel/HBoxContainer/XR_Button.disabled = false
 		$PlayerControlUI/Panel/HBoxContainer/XR_Button.set_text("OpenXR")
 		
 func _inject_flat_fps():

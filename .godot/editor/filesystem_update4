@@ -12,3 +12,4 @@ res://modules/player_controller/fps_controller/fps_controller.gd
 res://modules/player_controller/tps_controller/tps_controller.gd
 res://modules/player_controller/xr_controller/xr_controller.tscn
 res://modules/player_controller/xr_controller/xr_controller.gd
+res://modules/control_manager/xr_signalers/WebXRConfigurer.gd
