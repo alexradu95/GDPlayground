@@ -1,4 +1,3 @@
-@tool
 extends "res://modules/player_controller/base_controller/base_player_controller.gd"
 
 

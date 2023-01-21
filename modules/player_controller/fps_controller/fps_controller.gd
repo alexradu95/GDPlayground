@@ -18,4 +18,4 @@ func _rotate_camera_on_mouse_motion(event):
 	# We rotate the Camera on X axis in order to not mess with the controls
 	$Camera3D.rotate_x(-event.relative.y * 0.05)
 	# We clamp the rotation in order to not rotate indifently on vertical axis
-	rotation.x = clamp(rotation.x, -PI/2, PI/2)
+	rotation.x = clamp(rotation.x, -90, 90)

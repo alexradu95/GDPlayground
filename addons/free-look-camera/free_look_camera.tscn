@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvg4xi6hsc38g"]
+
+[ext_resource type="Script" path="res://addons/free-look-camera/free_look_camera.gd" id="1_drbg7"]
+
+[node name="FreeLookCamera" type="Camera3D"]
+script = ExtResource("1_drbg7")

@@ -4,21 +4,24 @@
 [ext_resource type="Script" path="res://modules/player_controller/xr_controller/xr_controller.gd" id="2_43j5o"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1ig16"]
-size = Vector3(0.2, 0.2, 0.2)
+size = Vector3(0.1, 0.1, 0.1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_m2clr"]
-size = Vector3(0.2, 0.2, 0.2)
+size = Vector3(0.1, 0.1, 0.1)
 
 [node name="PlayerController" instance=ExtResource("1_ukj7w")]
+velocity = Vector3(0, -774.522, 0)
 script = ExtResource("2_43j5o")
 eye_offset = 0.1
 
 [node name="XROrigin3D" type="XROrigin3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.531643, 0)
 
 [node name="HeadPosition" type="Node3D" parent="XROrigin3D/XRCamera3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
 
 [node name="LeftHand" type="XRController3D" parent="XROrigin3D" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04412, 0, -0.991599)

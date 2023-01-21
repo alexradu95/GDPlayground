@@ -1,3 +1,6 @@
+Camera3D
+VBoxContainer
+Button
 Node3D
 MeshInstance3D
 XRAnchor3D
@@ -5,7 +8,6 @@ XRController3D
 XRCamera3D
 XROrigin3D
 CharacterBody3D
-Camera3D
 SpringArm3D
 Node
 CanvasLayer
@@ -17,7 +19,6 @@ Area3D
 Control
 StaticBody3D
 Label
-Button
 DirectionalLight3D
 RigidBody3D
 OpenXRHand

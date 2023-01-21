@@ -26,6 +26,11 @@ func _on_tps_button_pressed():
 	_inject_flat_tps()
 	$PlayerControlUI.hide()
 	
+func _on_free_look_button_pressed():
+	print("Launch Free look button pressed")
+	_inject_free_look_camera()
+	$PlayerControlUI.hide()
+	
 func _initialize_webxr():
 	var webxr_interface = XRServer.find_interface("WebXR")
 	if webxr_interface.initialize():
@@ -50,15 +55,15 @@ func _on_web_xr_availability(webXrAvailability: bool):
 	if(webXrAvailability):
 		print("WebXR Interface is available")
 		supportedXR = xrType.WEBXR
-		$PlayerControlUI/Panel/HBoxContainer/XR_Button.disabled = false
-		$PlayerControlUI/Panel/HBoxContainer/XR_Button.set_text("WebXR")
+		$PlayerControlUI/Panel/HBoxContainer/VBoxContainer/XR_Button.disabled = false
+		$PlayerControlUI/Panel/HBoxContainer/VBoxContainer/XR_Button.set_text("WebXR")
 
 func _on_open_xr_availability(openXrAvailability : bool):
 	if(openXrAvailability):
 		print("OpenXR Interface is available")
 		supportedXR = xrType.OPENXR
-		$PlayerControlUI/Panel/HBoxContainer/XR_Button.disabled = false
-		$PlayerControlUI/Panel/HBoxContainer/XR_Button.set_text("OpenXR")
+		$PlayerControlUI/Panel/HBoxContainer/VBoxContainer/XR_Button.disabled = false
+		$PlayerControlUI/Panel/HBoxContainer/VBoxContainer/XR_Button.set_text("OpenXR")
 		
 func _inject_flat_fps():
 	var fpsControllerResource : Resource = load("res://modules/player_controller/fps_controller/fps_controller.tscn")
@@ -78,3 +83,9 @@ func _inject_xr_fps():
 	var xrControllerResource = load("res://modules/player_controller/xr_controller/xr_controller.tscn")
 	var xrControllerCamera =  xrControllerResource.instantiate()
 	self.add_child(xrControllerCamera)
+
+
+func _inject_free_look_camera():
+	var freeLookCameraResource = load("res://addons/free-look-camera/free_look_camera.tscn")
+	var freeLookCamera =  freeLookCameraResource.instantiate()
+	self.add_child(freeLookCamera)

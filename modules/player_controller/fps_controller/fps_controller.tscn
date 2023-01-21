@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://dua1d16lu8ju3"]
 
-[ext_resource type="PackedScene" path="res://modules/player_controller/base_controller/base_player_controller.tscn" id="1_oexbv"]
+[ext_resource type="PackedScene" uid="uid://dihql1pj53kbu" path="res://modules/player_controller/base_controller/base_player_controller.tscn" id="1_oexbv"]
 [ext_resource type="Script" path="res://modules/player_controller/fps_controller/fps_controller.gd" id="2_g7m42"]
 
 [node name="PlayerController" instance=ExtResource("1_oexbv")]
