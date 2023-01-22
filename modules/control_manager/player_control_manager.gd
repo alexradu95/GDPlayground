@@ -67,8 +67,8 @@ func _on_open_xr_availability(openXrAvailability : bool):
 		
 func _inject_flat_fps():
 	var fpsControllerResource : Resource = load("res://modules/player_controller/fps_controller/fps_controller.tscn")
-	var fpsController = fpsControllerResource.instantiate()
-	
+	var fpsController : Node3D = fpsControllerResource.instantiate()
+	fpsController.position = Vector3(0,2,0)
 	var currentScene = get_tree().current_scene
 	currentScene.add_child(fpsController)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

@@ -1,10 +1,12 @@
-Node
+MeshInstance3D
+CollisionShape3D
 GridMap
+MultiMeshInstance3D
+Node3D
+Node
 Camera3D
 VBoxContainer
 Button
-Node3D
-MeshInstance3D
 XRAnchor3D
 XRController3D
 XRCamera3D
@@ -15,7 +17,6 @@ CanvasLayer
 CSGBox3D
 Label3D
 WorldEnvironment
-CollisionShape3D
 Area3D
 Control
 StaticBody3D
