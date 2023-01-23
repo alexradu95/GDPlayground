@@ -1,6 +1,4 @@
-res://addons/gridmap_noise/gridmap_mesh_library_scene.tscn
-res://addons/gridmap_noise/gridmap_noise_mesh_library.tres
-res://addons/gridmap_noise/colour_cubes.gd
-res://addons/gridmap_noise/gridmap_noise.gd
 res://addons/gridmap_noise/gridmap_noise.tscn
-res://scenes/main.tscn
+res://assets/voxels/terrain_cubes.tres
+res://addons/gridmap_noise/Treee.res
+res://addons/gridmap_noise/gridmap_noise.gd

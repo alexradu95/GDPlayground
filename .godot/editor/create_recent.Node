@@ -1,5 +1,5 @@
-MeshInstance3D
 MultiMeshInstance3D
+MeshInstance3D
 CollisionShape3D
 GridMap
 Node3D
