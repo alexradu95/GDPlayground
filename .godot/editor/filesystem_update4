@@ -3,3 +3,4 @@ res://addons/gridmap_noise/gridmap_noise_mesh_library.tres
 res://addons/gridmap_noise/colour_cubes.gd
 res://addons/gridmap_noise/gridmap_noise.gd
 res://addons/gridmap_noise/gridmap_noise.tscn
+res://scenes/main.tscn
