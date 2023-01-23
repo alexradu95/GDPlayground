@@ -14,3 +14,4 @@ transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -
 shadow_enabled = true
 
 [node name="GridMap" parent="." instance=ExtResource("1_yxyrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -250, -88.8758, -250)

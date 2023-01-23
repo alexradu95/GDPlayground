@@ -6,7 +6,7 @@ extends GridMap
 var increment = 0;
 
 @export var noise: FastNoiseLite = FastNoiseLite.new()
-@export var grid_size: int = 20
+@export var grid_size: int = 200
 
 # When this button is pressed, the terrain will be generated again
 @export var generate: bool = false :
@@ -30,7 +30,7 @@ func cleanUp():
 func generate_terrain_gridmap(size: int):
 	clear()
 	
-	treeMultiMesh.multimesh.instance_count = 4000
+	treeMultiMesh.multimesh.instance_count = grid_size * grid_size
 	
 	var waterBox = BoxMesh.new()
 	waterBox.size = Vector3(size+1, 3, size+1)
@@ -45,7 +45,7 @@ func generate_terrain_gridmap(size: int):
 			vector.y = height
 			
 			if treeMultiMesh:
-				if i < treeMultiMesh.multimesh.instance_count && height == 6 && noise.get_noise_3dv(vector) > 0.1:
+				if i < treeMultiMesh.multimesh.instance_count && ( height == 7 ||  height == 8 ) && noise.get_noise_3dv(vector) > 0.1:
 					treeMultiMesh.multimesh.set_instance_transform(i, Transform3D(Basis.IDENTITY, 
 						vector + Vector3.RIGHT/2  + Vector3.BACK/2+ Vector3.UP))
 					i = i+1
