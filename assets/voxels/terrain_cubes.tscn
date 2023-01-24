@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://brnvb4ruyra8s" path="res://assets/textures/blocks/coral.jpg" id="1_5373w"]
 [ext_resource type="Texture2D" uid="uid://rqn8sqi7b4te" path="res://assets/textures/blocks/real_deep_water.jpg" id="2_3csht"]
-[ext_resource type="Texture2D" uid="uid://bdd4nuwt28h12" path="res://assets/textures/blocks/deep_water.jpg" id="2_w356j"]
 [ext_resource type="Texture2D" uid="uid://hgwdvkdq0c47" path="res://assets/textures/blocks/another_sea.jpg" id="3_30tlm"]
 [ext_resource type="Texture2D" uid="uid://v315lqhui0y" path="res://assets/textures/blocks/sand_2.jpg" id="5_6niih"]
 [ext_resource type="Texture2D" uid="uid://dydujmp6ua3rv" path="res://assets/textures/blocks/sand.jpg" id="6_xd62b"]
@@ -11,11 +10,15 @@
 [ext_resource type="Texture2D" uid="uid://bjs3wfvlyr5k7" path="res://assets/textures/blocks/grass_shrooms.jpg" id="9_fdqhk"]
 [ext_resource type="Texture2D" uid="uid://dine2aq0kygfn" path="res://assets/textures/blocks/alien_3.jpg" id="10_8ym18"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_338in"]
-albedo_texture = ExtResource("2_w356j")
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5lu6y"]
+load_path = "res://.godot/imported/deep_water.jpg-844fe67ecf707def568fefba78cc4e29.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l6w84"]
+albedo_color = Color(0.12549, 0.552941, 1, 1)
+albedo_texture = SubResource("CompressedTexture2D_5lu6y")
 
 [sub_resource type="BoxMesh" id="BoxMesh_q87m1"]
-material = SubResource("StandardMaterial3D_338in")
+material = SubResource("StandardMaterial3D_l6w84")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_maaxh"]
 
@@ -93,104 +96,207 @@ material = SubResource("StandardMaterial3D_pdaos")
 
 [node name="terrain_cubes" type="Node3D"]
 
-[node name="CubeMesh" type="MeshInstance3D" parent="."]
+[node name="CubeMesh_DeepWater" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.85707, 0, 0)
 mesh = SubResource("BoxMesh_q87m1")
 skeleton = NodePath("Cube")
 
-[node name="Cube" type="StaticBody3D" parent="CubeMesh"]
+[node name="Cube" type="StaticBody3D" parent="CubeMesh_DeepWater"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.85707, 0, 0)
 
-[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh/Cube"]
+[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh_DeepWater/Cube"]
 shape = SubResource("BoxShape3D_maaxh")
 
-[node name="CubeMesh2" type="MeshInstance3D" parent="."]
+[node name="CubeMesh_DeepWater2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.85707, 0, 3.36527)
+mesh = SubResource("BoxMesh_q87m1")
+skeleton = NodePath("Cube")
+
+[node name="Cube" type="StaticBody3D" parent="CubeMesh_DeepWater2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.85707, 0, 0)
+
+[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh_DeepWater2/Cube"]
+shape = SubResource("BoxShape3D_maaxh")
+
+[node name="CubeMesh_Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.40764, 0, 0)
 mesh = SubResource("BoxMesh_573id")
 skeleton = NodePath("Cube2")
 
-[node name="Cube2" type="StaticBody3D" parent="CubeMesh2"]
+[node name="Cube2" type="StaticBody3D" parent="CubeMesh_Water"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.40764, 0, 0)
 
-[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh2/Cube2"]
+[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh_Water/Cube2"]
 shape = SubResource("BoxShape3D_0jfv2")
 
-[node name="CubeMesh3" type="MeshInstance3D" parent="."]
+[node name="CubeMesh_Water2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.40764, 0, 3.62533)
+mesh = SubResource("BoxMesh_573id")
+skeleton = NodePath("Cube2")
+
+[node name="Cube2" type="StaticBody3D" parent="CubeMesh_Water2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.40764, 0, 0)
+
+[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh_Water2/Cube2"]
+shape = SubResource("BoxShape3D_0jfv2")
+
+[node name="CubeMesh_ShallowWater" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02167, 0, 0)
 mesh = SubResource("BoxMesh_ljfl7")
 skeleton = NodePath("../CubeMesh/Cube3")
 
-[node name="Cube3" type="StaticBody3D" parent="CubeMesh3"]
+[node name="Cube3" type="StaticBody3D" parent="CubeMesh_ShallowWater"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.02167, 0, 0)
 
-[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh3/Cube3"]
+[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh_ShallowWater/Cube3"]
 shape = SubResource("BoxShape3D_nmi8l")
 
-[node name="CubeMesh4" type="MeshInstance3D" parent="."]
+[node name="CubeMesh_ShallowWater2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02167, 0, 3.36773)
+mesh = SubResource("BoxMesh_ljfl7")
+skeleton = NodePath("../CubeMesh/Cube3")
+
+[node name="Cube3" type="StaticBody3D" parent="CubeMesh_ShallowWater2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.02167, 0, 0)
+
+[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh_ShallowWater2/Cube3"]
+shape = SubResource("BoxShape3D_nmi8l")
+
+[node name="CubeMesh_Coral" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85557, 0, 0)
 mesh = SubResource("BoxMesh_2byh2")
 skeleton = NodePath("Cube4")
 
-[node name="Cube4" type="StaticBody3D" parent="CubeMesh4"]
+[node name="Cube4" type="StaticBody3D" parent="CubeMesh_Coral"]
 
-[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh4/Cube4"]
+[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh_Coral/Cube4"]
 shape = SubResource("BoxShape3D_lfba7")
 
-[node name="CubeMesh5" type="MeshInstance3D" parent="."]
+[node name="CubeMesh_Coral2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85557, 0, 3.07115)
+mesh = SubResource("BoxMesh_2byh2")
+skeleton = NodePath("Cube4")
+
+[node name="Cube4" type="StaticBody3D" parent="CubeMesh_Coral2"]
+
+[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh_Coral2/Cube4"]
+shape = SubResource("BoxShape3D_lfba7")
+
+[node name="CubeMesh_Sand" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_wph6k")
 skeleton = NodePath("Cube5")
 
-[node name="Cube5" type="StaticBody3D" parent="CubeMesh5"]
+[node name="Cube5" type="StaticBody3D" parent="CubeMesh_Sand"]
 
-[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh5/Cube5"]
+[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh_Sand/Cube5"]
 shape = SubResource("BoxShape3D_lu16j")
 
-[node name="CubeMesh6" type="MeshInstance3D" parent="."]
+[node name="CubeMesh_Sand2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.42625)
+mesh = SubResource("BoxMesh_wph6k")
+skeleton = NodePath("Cube5")
+
+[node name="Cube5" type="StaticBody3D" parent="CubeMesh_Sand2"]
+
+[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh_Sand2/Cube5"]
+shape = SubResource("BoxShape3D_lu16j")
+
+[node name="CubeMesh_BrownSand" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.26347, 0, 0)
 mesh = SubResource("BoxMesh_t33l8")
 skeleton = NodePath("Cube6")
 
-[node name="Cube6" type="StaticBody3D" parent="CubeMesh6"]
+[node name="Cube6" type="StaticBody3D" parent="CubeMesh_BrownSand"]
 
-[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh6/Cube6"]
+[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh_BrownSand/Cube6"]
 shape = SubResource("BoxShape3D_y1moi")
 
-[node name="CubeMesh7" type="MeshInstance3D" parent="."]
+[node name="CubeMesh_BrownSand2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.26347, 0, 3.85035)
+mesh = SubResource("BoxMesh_t33l8")
+skeleton = NodePath("Cube6")
+
+[node name="Cube6" type="StaticBody3D" parent="CubeMesh_BrownSand2"]
+
+[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh_BrownSand2/Cube6"]
+shape = SubResource("BoxShape3D_y1moi")
+
+[node name="CubeMesh_Grass" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.92929, 0, 0)
 mesh = SubResource("BoxMesh_7iwuk")
 skeleton = NodePath("Cube7")
 
-[node name="Cube7" type="StaticBody3D" parent="CubeMesh7"]
+[node name="Cube7" type="StaticBody3D" parent="CubeMesh_Grass"]
 
-[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh7/Cube7"]
+[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh_Grass/Cube7"]
 shape = SubResource("BoxShape3D_w4i2x")
 
-[node name="CubeMesh8" type="MeshInstance3D" parent="."]
+[node name="CubeMesh_Grass2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.92929, 0, 3.51041)
+mesh = SubResource("BoxMesh_7iwuk")
+skeleton = NodePath("Cube7")
+
+[node name="Cube7" type="StaticBody3D" parent="CubeMesh_Grass2"]
+
+[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh_Grass2/Cube7"]
+shape = SubResource("BoxShape3D_w4i2x")
+
+[node name="CubeMesh_GreenGrass" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.99377, 0, 0)
 mesh = SubResource("BoxMesh_37waw")
 skeleton = NodePath("../CubeMesh/Cube8")
 
-[node name="Cube8" type="StaticBody3D" parent="CubeMesh8"]
+[node name="Cube8" type="StaticBody3D" parent="CubeMesh_GreenGrass"]
 
-[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh8/Cube8"]
+[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh_GreenGrass/Cube8"]
 shape = SubResource("BoxShape3D_t7ahc")
 
-[node name="CubeMesh9" type="MeshInstance3D" parent="."]
+[node name="CubeMesh_GreenGrass2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.99377, 0, 3.30345)
+mesh = SubResource("BoxMesh_37waw")
+skeleton = NodePath("../CubeMesh/Cube8")
+
+[node name="Cube8" type="StaticBody3D" parent="CubeMesh_GreenGrass2"]
+
+[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh_GreenGrass2/Cube8"]
+shape = SubResource("BoxShape3D_t7ahc")
+
+[node name="CubeMesh_ShroomGrass" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.285, 0, 0)
 mesh = SubResource("BoxMesh_ppa66")
 skeleton = NodePath("Cube9")
 
-[node name="Cube9" type="StaticBody3D" parent="CubeMesh9"]
+[node name="Cube9" type="StaticBody3D" parent="CubeMesh_ShroomGrass"]
 
-[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh9/Cube9"]
+[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh_ShroomGrass/Cube9"]
 shape = SubResource("BoxShape3D_7l64o")
 
-[node name="CubeMesh10" type="MeshInstance3D" parent="."]
+[node name="CubeMesh_ShroomGrass2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.285, 0, 3.12494)
+mesh = SubResource("BoxMesh_ppa66")
+skeleton = NodePath("Cube9")
+
+[node name="Cube9" type="StaticBody3D" parent="CubeMesh_ShroomGrass2"]
+
+[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh_ShroomGrass2/Cube9"]
+shape = SubResource("BoxShape3D_7l64o")
+
+[node name="CubeMesh_AlienGrass" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.318, 0, 0)
 mesh = SubResource("BoxMesh_kwiw4")
 skeleton = NodePath("Cube10")
 
-[node name="Cube10" type="StaticBody3D" parent="CubeMesh10"]
+[node name="Cube10" type="StaticBody3D" parent="CubeMesh_AlienGrass"]
 
-[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh10/Cube10"]
+[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh_AlienGrass/Cube10"]
+shape = SubResource("BoxShape3D_ur0ny")
+
+[node name="CubeMesh_AlienGrass2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.318, 0, 3.20663)
+mesh = SubResource("BoxMesh_kwiw4")
+skeleton = NodePath("Cube10")
+
+[node name="Cube10" type="StaticBody3D" parent="CubeMesh_AlienGrass2"]
+
+[node name="CubeShape" type="CollisionShape3D" parent="CubeMesh_AlienGrass2/Cube10"]
 shape = SubResource("BoxShape3D_ur0ny")

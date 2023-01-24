@@ -1,4 +1,5 @@
-res://addons/gridmap_noise/gridmap_noise.tscn
+res://assets/voxels/terrain_cubes.tscn
 res://assets/voxels/terrain_cubes.tres
 res://addons/gridmap_noise/Treee.res
+res://addons/gridmap_noise/gridmap_noise.tscn
 res://addons/gridmap_noise/gridmap_noise.gd
