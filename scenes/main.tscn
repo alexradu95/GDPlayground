@@ -1,17 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://cbkugbmas704y"]
 
-[ext_resource type="PackedScene" uid="uid://bnv5awe0csy6n" path="res://addons/gridmap_noise/gridmap_noise.tscn" id="1_yxyrv"]
+[ext_resource type="PackedScene" uid="uid://d2nec2o7b8wts" path="res://addons/gridmap_noise/gridmap_noise.tscn" id="1_yxyrv"]
 
 [sub_resource type="Environment" id="Environment_o2xlo"]
 
 [node name="Main" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="World" type="Node" parent="."]
+
+[node name="Terrain" parent="World" instance=ExtResource("1_yxyrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -200, -86.0231, -200)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World"]
 environment = SubResource("Environment_o2xlo")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 53.3547, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World"]
+transform = Transform3D(-0.829729, 0.557467, 0.0279443, -0.056609, -0.133851, 0.989383, 0.555288, 0.819338, 0.142618, 228.174, 101.961, 223.862)
 shadow_enabled = true
-
-[node name="GridMap" parent="." instance=ExtResource("1_yxyrv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -250, -846.881, -250)
