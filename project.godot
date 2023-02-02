@@ -19,13 +19,9 @@ config/icon="res://icon.svg"
 
 ControlManager="*res://modules/control_manager/player_control_manager.tscn"
 
-[editor]
-
-export/convert_text_resources_to_binary=true
-
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/prettyprimitive/plugin.cfg")
+enabled=PackedStringArray()
 
 [physics]
 
