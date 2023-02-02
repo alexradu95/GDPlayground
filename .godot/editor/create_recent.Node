@@ -1,10 +1,10 @@
-MultiMeshInstance3D
 MeshInstance3D
+Node
+Camera3D
+MultiMeshInstance3D
 CollisionShape3D
 GridMap
 Node3D
-Node
-Camera3D
 VBoxContainer
 Button
 XRAnchor3D
