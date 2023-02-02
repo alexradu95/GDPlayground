@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cbkugbmas704y"]
 
-[ext_resource type="PackedScene" uid="uid://bnv5awe0csy6n" path="res://addons/gridmap_noise/gridmap_noise.tscn" id="1_yxyrv"]
+[ext_resource type="PackedScene" uid="uid://d3uwtgkthpiw6" path="res://addons/gridmap_noise/gridmap_noise.tscn" id="1_yxyrv"]
 
 [sub_resource type="Environment" id="Environment_o2xlo"]
 
@@ -14,4 +14,4 @@ transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -
 shadow_enabled = true
 
 [node name="GridMap" parent="." instance=ExtResource("1_yxyrv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -250, -846.881, -250)
+metadata/_editor_floor_ = Vector3(0, 109, 0)
