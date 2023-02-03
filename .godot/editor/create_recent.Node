@@ -1,1 +1,8 @@
+Camera3D
+CollisionShape3D
+MeshInstance3D
+CharacterBody3D
+Button
+HBoxContainer
+Node
 Node3D

@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3]
 
-[ext_resource type="Script" path="res://modules/player_controller/player_body.gd" id="1_86c73"]
+[ext_resource type="Script" path="res://modules/player_controller/XRPlayerBody/xr_player_body.gd" id="1_86c73"]
 [ext_resource type="Script" path="res://modules/player_controller/xr_type_signaler.gd" id="2_0nd1l"]
-[ext_resource type="Shader" path="res://modules/player_controller/blackout.gdshader" id="2_5p8ux"]
+[ext_resource type="Shader" path="res://modules/player_controller/XRPlayerBody/blackout.gdshader" id="2_5p8ux"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ns80u"]
 size = Vector2(2, 2)

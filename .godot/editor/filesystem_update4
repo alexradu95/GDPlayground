@@ -1,4 +1,16 @@
 res://scenes/IngameScene.tscn
 res://ui/theme.tres
 res://modules/gridmap/voxels/terrain_cubes.tres
-res://modules/player_controller/player_body.tscn
+res://modules/player_controller/FirstPersonPlayerBody/first_person_player_body.tscn
+res://modules/player_controller/XRPlayerBody/player_body.tscn
+res://modules/player_controller/XRPlayerBody/xr_player_body.tscn
+res://modules/player_controller/XRPlayerBody/xr_player_body.gd
+res://modules/player_controller/FirstPersonPlayerBody/first_person_player_body.gd
+res://scenes/IngameScene.gd
+res://scenes/IntroScene.tscn
+res://modules/boot/BootsplashScene.tscn
+res://modules/boot/godot/GodotBootsplashScene.tscn
+res://modules/scenes/IngameScene.tscn
+res://modules/main_menu/settings/GameSettingsScene.gd
+res://modules/scenes/IntroScene.tscn
+res://modules/main_menu/MainMenuScene.tscn
