@@ -6,8 +6,9 @@ extends GridMap
 
 @export var grid_size: int = 200 :
 	set(value):
-		grid_size = value
-		generate_terrain_gridmap(grid_size)
+		if Engine.is_editor_hint():
+			grid_size = value
+			generate_terrain_gridmap(grid_size)
 
 @onready var increment = self.mesh_library.get_item_list().size();
 
