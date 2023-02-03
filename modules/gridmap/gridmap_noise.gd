@@ -12,8 +12,6 @@ extends GridMap
 
 @onready var increment = self.mesh_library.get_item_list().size();
 
-
-
 func _ready():
 	generate_terrain_gridmap(grid_size)
 	

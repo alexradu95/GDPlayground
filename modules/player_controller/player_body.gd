@@ -1,4 +1,3 @@
-@tool
 extends CharacterBody3D
 
 const SPEED = 5.0
@@ -16,14 +15,9 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _input(event):
-	if event.is_action_pressed("ui_cancel"):
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		else:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
+
 	#get mouse input for camera rotation
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion && Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(deg_to_rad(-event.relative.x))
 		camera_node.rotate_x(-event.relative.y * .005)
 		camera_node.rotation.x = clamp(camera_node.rotation.x, -PI/2, PI/2)
