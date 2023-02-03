@@ -1,4 +1,4 @@
-res://scenes/main.tscn
-res://assets/voxels/terrain_cubes.tres
-res://addons/gridmap_noise/gridmap_noise.gd
-res://modules/PlayerBody/player_body.gd
+res://scenes/IngameScene.tscn
+res://ui/theme.tres
+res://modules/gridmap/voxels/terrain_cubes.tres
+res://modules/player_controller/player_body.tscn
