@@ -6,7 +6,7 @@ uid="uid://bdd4nuwt28h12"
 path.s3tc="res://.godot/imported/deep_water.jpg-d67b96e7c26bf75d0214e12e50ce404f.s3tc.ctex"
 path.etc2="res://.godot/imported/deep_water.jpg-d67b96e7c26bf75d0214e12e50ce404f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc", "etc2"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
@@ -18,9 +18,9 @@ dest_files=["res://.godot/imported/deep_water.jpg-d67b96e7c26bf75d0214e12e50ce40
 [params]
 
 compress/mode=2
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true

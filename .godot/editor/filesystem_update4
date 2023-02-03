@@ -1,9 +1,6 @@
-res://assets/translation.de.translation
-res://assets/translation.en.translation
-res://assets/i18n/translation.en.translation
-res://assets/i18n/translation.de.translation
-res://modules/main_menu/settings/GameSettingsScene.tscn
+res://scenes/level_000.tscn
 res://modules/ui/theme.tres
 res://modules/gridmap/voxels/terrain_cubes.tres
-res://scenes/level_000.tscn
 res://modules/main_menu/MainMenuScene.tscn
+res://modules/main_menu/settings/GameSettingsScene.tscn
+res://modules/player_controller/player_body.tscn

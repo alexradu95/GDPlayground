@@ -102,8 +102,8 @@ common/physics_ticks_per_second=90
 [rendering]
 
 renderer/rendering_method="mobile"
-environment/defaults/default_clear_color=Color(0.211765, 0.239216, 0.321569, 1)
 textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.211765, 0.239216, 0.321569, 1)
 
 [xr]
 
