@@ -89,13 +89,3 @@ func _physics_process(delta):
 	var colliding = _process_on_physical_movement(delta)
 	if !colliding:
 		_process_on_player_input(delta)
-
-
-func _on_openxr_available_signal():
-	get_viewport().use_xr = true
-	xrMode = true
-	print("OpenXR is available")
-
-func _on_webxr_available_signal():
-	get_viewport().use_xr = true;
-	xrMode = true
