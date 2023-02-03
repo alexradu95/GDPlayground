@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://htsbdgs0ggpx"]
+
+[ext_resource type="Script" path="res://modules/base_scene/base_scene.gd" id="1_bwb6c"]
+[ext_resource type="PackedScene" path="res://modules/ui/overlays/PauseOverlay.tscn" id="2_b4yyr"]
+[ext_resource type="PackedScene" path="res://modules/ui/overlays/FadeOverlay.tscn" id="3_mxs2o"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dk83m"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_8tap3"]
+sky_material = SubResource("ProceduralSkyMaterial_dk83m")
+
+[sub_resource type="Environment" id="Environment_m1fm3"]
+background_mode = 2
+sky = SubResource("Sky_8tap3")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="BaseScene" type="Node3D"]
+script = ExtResource("1_bwb6c")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.956991, -0.120575, 0.263873, 0.275787, -0.0957756, 0.956435, -0.0900494, 0.988073, 0.124909, 151.124, 284.683, 155.61)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_m1fm3")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="FadeOverlay" parent="UI" instance=ExtResource("3_mxs2o")]
+unique_name_in_owner = true
+visible = false
+
+[node name="PauseOverlay" parent="UI" instance=ExtResource("2_b4yyr")]
+unique_name_in_owner = true
+visible = false

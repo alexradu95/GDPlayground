@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MyGame"
-run/main_scene="res://modules/boot/godot/GodotBootsplashScene.tscn"
+run/main_scene="res://modules/main_menu/MainMenuScene.tscn"
 config/features=PackedStringArray("4.0")
 config/icon="res://icon.svg"
 
@@ -34,7 +34,7 @@ enabled=PackedStringArray()
 
 [gui]
 
-theme/custom="res://ui/theme.tres"
+theme/custom="res://modules/ui/theme.tres"
 
 [input]
 
@@ -93,7 +93,7 @@ pause={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://i18n/translation.de.translation", "res://i18n/translation.en.translation")
+locale/translations=PackedStringArray("res://assets/i18n/translation.de.translation", "res://assets/i18n/translation.en.translation")
 
 [physics]
 

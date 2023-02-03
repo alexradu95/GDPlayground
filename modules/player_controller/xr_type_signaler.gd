@@ -10,16 +10,15 @@ func _ready():
 	
 	var xr_interface : OpenXRInterface = XRServer.find_interface('OpenXR')
 	if xr_interface:
-		print("OpenXR: Interface found, emmiting signal to parent")
-		openXRAvailability.emit()
-		return
+		openXRAvailability.emit(true)
 	else:
-		print("OpenXR: Interface could not be found")
+		openXRAvailability.emit(false)
 	
+	print("WebXR: Configuring interface")
 	var webxr_interface = XRServer.find_interface("WebXR")
 	
 	if webxr_interface:
-		print("WebXR: Interface found")
+		print("WebXR: webxr_interface found")
 		
 		# We want an immersive VR session, as opposed to AR ('immersive-ar') or a
 		# simple 3DoF viewer ('viewer').
@@ -51,12 +50,14 @@ func _ready():
 		# be called sometime later to let us know if it's supported or not.
 		webxr_interface.is_session_supported("immersive-vr")
 	else:
-		print("WebXR: Interface could not be found")
+		print("WebXR: Could not find WebXR Interface")
+		webXRAvailability.emit(false)
 
 func _on_webxr_session_supported(session_mode: String, supported: bool) -> void:
 	if session_mode == "immersive-vr":
 		if supported:
-			print("WebXR: Immersive-vr is supported, emmiting singal to parent")
-			webXRAvailability.emit()
+			webXRAvailability.emit(true)
+			print("WebXR: immersive-vr is supported")
 		else:
+			webXRAvailability.emit(false)
 			print("WebXR: immersive-vr not supported supported")
