@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://qgtj5yej8qjr"]
+[gd_scene load_steps=6 format=3 uid="uid://5kxf4m6pje2b"]
 
 [ext_resource type="Script" path="res://modules/main_menu/settings/GameSettingsScene.gd" id="1_3764u"]
+[ext_resource type="PackedScene" path="res://modules/ui/overlays/FadeOverlay.tscn" id="1_w6tmj"]
+[ext_resource type="PackedScene" path="res://modules/ui/components/GameSettings.tscn" id="2_qsqie"]
 [ext_resource type="Theme" uid="uid://d22mpqutkotsu" path="res://modules/ui/theme.tres" id="3_unbh4"]
 [ext_resource type="AudioStream" uid="uid://dlchk3c1baiy8" path="res://assets/music/corgie-title.ogg" id="4_7okdb"]
 
@@ -25,11 +27,18 @@ layout_mode = 2
 theme_type_variation = &"HeaderLarge"
 text = "settings"
 
+[node name="GameSettings" parent="UI/CenterContainer/VBoxContainer" instance=ExtResource("2_qsqie")]
+layout_mode = 2
+
 [node name="ReturnButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("3_unbh4")
 text = "return_to_main"
+
+[node name="FadeOverlay" parent="UI" instance=ExtResource("1_w6tmj")]
+unique_name_in_owner = true
+visible = false
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_7okdb")

@@ -7634,25 +7634,6 @@ function _emscripten_glUniform2f(location, v0, v1) {
  GLctx.uniform2f(webglGetUniformLocation(location), v0, v1);
 }
 
-var miniTempWebGLFloatBuffers = [];
-
-function _emscripten_glUniform2fv(location, count, value) {
- if (GL.currentContext.version >= 2) {
-  count && GLctx.uniform2fv(webglGetUniformLocation(location), GROWABLE_HEAP_F32(), value >> 2, count * 2);
-  return;
- }
- if (count <= 144) {
-  var view = miniTempWebGLFloatBuffers[2 * count - 1];
-  for (var i = 0; i < 2 * count; i += 2) {
-   view[i] = GROWABLE_HEAP_F32()[value + 4 * i >> 2];
-   view[i + 1] = GROWABLE_HEAP_F32()[value + (4 * i + 4) >> 2];
-  }
- } else {
-  var view = GROWABLE_HEAP_F32().subarray(value >> 2, value + count * 8 >> 2);
- }
- GLctx.uniform2fv(webglGetUniformLocation(location), view);
-}
-
 var __miniTempWebGLIntBuffers = [];
 
 function _emscripten_glUniform2iv(location, count, value) {
@@ -7671,6 +7652,8 @@ function _emscripten_glUniform2iv(location, count, value) {
  }
  GLctx.uniform2iv(webglGetUniformLocation(location), view);
 }
+
+var miniTempWebGLFloatBuffers = [];
 
 function _emscripten_glUniform3fv(location, count, value) {
  if (GL.currentContext.version >= 2) {
@@ -12543,16 +12526,16 @@ var preloadedAudios = {};
 
 var GLctx;
 
-var miniTempWebGLFloatBuffersStorage = new Float32Array(288);
-
-for (var i = 0; i < 288; ++i) {
- miniTempWebGLFloatBuffers[i] = miniTempWebGLFloatBuffersStorage.subarray(0, i + 1);
-}
-
 var __miniTempWebGLIntBuffersStorage = new Int32Array(288);
 
 for (var i = 0; i < 288; ++i) {
  __miniTempWebGLIntBuffers[i] = __miniTempWebGLIntBuffersStorage.subarray(0, i + 1);
+}
+
+var miniTempWebGLFloatBuffersStorage = new Float32Array(288);
+
+for (var i = 0; i < 288; ++i) {
+ miniTempWebGLFloatBuffers[i] = miniTempWebGLFloatBuffersStorage.subarray(0, i + 1);
 }
 
 Module["request_quit"] = function() {
@@ -12742,7 +12725,6 @@ var asmLibraryArg = {
  "emscripten_glUniform1ui": _emscripten_glUniform1ui,
  "emscripten_glUniform1uiv": _emscripten_glUniform1uiv,
  "emscripten_glUniform2f": _emscripten_glUniform2f,
- "emscripten_glUniform2fv": _emscripten_glUniform2fv,
  "emscripten_glUniform2iv": _emscripten_glUniform2iv,
  "emscripten_glUniform3fv": _emscripten_glUniform3fv,
  "emscripten_glUniform4f": _emscripten_glUniform4f,

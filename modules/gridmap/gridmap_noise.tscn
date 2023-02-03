@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://du4jof02mgx4g"]
 
-[ext_resource type="MeshLibrary" uid="uid://csiokfhmem6d2" path="res://modules/gridmap/voxels/terrain_cubes.tres" id="1_v6c3h"]
+[ext_resource type="MeshLibrary" path="res://modules/gridmap/voxels/terrain_cubes.tres" id="1_v6c3h"]
 [ext_resource type="Script" path="res://modules/gridmap/gridmap_noise.gd" id="2_xtrkw"]
 [ext_resource type="ArrayMesh" uid="uid://b0grbkxp45y08" path="res://modules/gridmap/Treee.res" id="3_v243r"]
 
