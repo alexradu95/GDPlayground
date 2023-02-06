@@ -80,3 +80,13 @@ mesh = SubResource("BoxMesh_kckml")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.52998, 0, -1.23273)
 operation = 2
 mesh = SubResource("BoxMesh_e67tl")
+
+[node name="DoorFrameEntrance" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.333, -0.1, 2.943)
+operation = 2
+size = Vector3(0.9, 2, 0.3)
+
+[node name="DoorFrameKitchen" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01492, -0.197829, 2.14376)
+operation = 2
+size = Vector3(0.2, 2, 0.8)
