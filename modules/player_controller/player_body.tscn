@@ -7,8 +7,8 @@
 size = Vector2(2, 2)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y04l7"]
-radius = 0.4
-height = 1.8
+radius = 0.3
+height = 1.75
 
 [node name="PlayerBody" type="CharacterBody3D"]
 script = ExtResource("1_m0kle")

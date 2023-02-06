@@ -1,5 +1,5 @@
-res://modules/gridmap/gridmap_noise.tscn
+res://scenes/level_000.tscn
 res://modules/ui/theme.tres
 res://modules/gridmap/voxels/terrain_cubes.tres
 res://scenes/apartment/apartment.tscn
-res://scenes/level_000.tscn
+res://modules/player_controller/player_body.tscn
