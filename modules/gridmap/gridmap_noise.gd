@@ -31,7 +31,7 @@ func generate_terrain_gridmap(size: int):
 			vector.y = height
 						
 			if $TreeMultiMesh:
-				if i < $TreeMultiMesh.multimesh.instance_count && ( height == 5 || height == 6 || height == 7 ) && noise.get_noise_3dv(vector) > 0.15:
+				if i < $TreeMultiMesh.multimesh.instance_count && ( height == 7 || height == 8 || height == 9 ) && noise.get_noise_3dv(vector) > 0.1:
 					$TreeMultiMesh.multimesh.set_instance_transform(i, Transform3D(Basis.IDENTITY, 
 						vector + Vector3.RIGHT/2  + Vector3.BACK/2+ Vector3.UP))
 					i = i+1

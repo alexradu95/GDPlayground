@@ -1,6 +1,5 @@
-res://scenes/level_000.tscn
+res://modules/gridmap/gridmap_noise.tscn
 res://modules/ui/theme.tres
 res://modules/gridmap/voxels/terrain_cubes.tres
-res://modules/main_menu/MainMenuScene.tscn
-res://modules/main_menu/settings/GameSettingsScene.tscn
-res://modules/player_controller/player_body.tscn
+res://scenes/apartment/apartment.tscn
+res://scenes/level_000.tscn
