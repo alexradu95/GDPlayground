@@ -1,6 +1,7 @@
 CSGBox3D
-CSGMesh3D
 MeshInstance3D
+Label3D
+CSGMesh3D
 TextureRect
 BoxContainer
 Camera3D

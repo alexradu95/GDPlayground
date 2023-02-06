@@ -120,3 +120,11 @@ size = Vector3(0.2, 2, 0.648618)
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -1.84975, -0.22776, 0.494167)
 operation = 2
 size = Vector3(0.2, 2, 0.85)
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00381, 1.28661, 8.0844)
+text = "Apartment Digital Twin
+Mapped using Roborock data
+Calibrated using Bosch Zamo
+# WIP"
+font_size = 16
