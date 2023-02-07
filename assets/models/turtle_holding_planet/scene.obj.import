@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b0kl12n6ffi2h"
+path="res://.godot/imported/scene.obj-a4a7afc5ce1159b0f5301118bfd3f109.mesh"
+
+[deps]
+
+files=["res://.godot/imported/scene.obj-a4a7afc5ce1159b0f5301118bfd3f109.mesh"]
+
+source_file="res://assets/models/turtle_holding_planet/scene.obj"
+dest_files=["res://.godot/imported/scene.obj-a4a7afc5ce1159b0f5301118bfd3f109.mesh", "res://.godot/imported/scene.obj-a4a7afc5ce1159b0f5301118bfd3f109.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
