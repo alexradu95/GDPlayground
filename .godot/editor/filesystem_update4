@@ -4,8 +4,3 @@ res://modules/gridmap/voxels/terrain_cubes.tres
 res://addons/naejimer_3d_planet_generator/noises/planet_no_atmosphere.tres
 res://addons/naejimer_3d_planet_generator/noises/planet_ice.tres
 res://addons/naejimer_3d_planet_generator/noises/planet_gaseous.tres
-res://modules/gridmap/gridmap_noise.tscn
-res://scenes/apartment/apartment.tscn
-res://addons/naejimer_3d_planet_generator/scenes/planet_ice.tscn
-res://addons/naejimer_3d_planet_generator/scenes/planet_gaseous.tscn
-res://addons/naejimer_3d_planet_generator/scenes/planet_terrestrial.tscn

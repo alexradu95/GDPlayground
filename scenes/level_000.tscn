@@ -24,23 +24,23 @@ mesh = ExtResource("3_tiwav")
 
 [node name="GridMap" parent="Turtle" index="0" instance=ExtResource("2_30vox")]
 transform = Transform3D(16.6667, 0, 0, 0, 0.347296, -16.663, 0, 16.663, 0.347296, -600.107, 1986.56, 3652.94)
-metadata/_editor_floor_ = Vector3(0, 103, 0)
+metadata/_editor_floor_ = Vector3(0, 87, 0)
 
 [node name="Apartment" parent="Turtle/GridMap" index="1" instance=ExtResource("4_3ew73")]
-transform = Transform3D(1, 0, 0, 0, 1, 1.86265e-09, 0, -1.86265e-09, 1, 126.277, 11, 71.962)
+transform = Transform3D(1, 0, 0, 0, 1, 1.86265e-09, 0, -1.86265e-09, 1, 130.334, 12.0062, 48.9133)
 
 [node name="Planets" type="Node3D" parent="." index="5"]
 
 [node name="PlanetNoAtmosphere" parent="Planets" index="0" instance=ExtResource("6_speyq")]
-transform = Transform3D(-199.859, 0, 7.5149, 0, 200, 0, -7.5149, 0, -199.859, -394.773, 674.603, 622.986)
+transform = Transform3D(-96.7835, 0, -175.023, 0, 200, 0, 175.023, 0, -96.7835, -394.773, 674.603, 622.986)
 skeleton = NodePath("../..")
 
 [node name="PlanetIce" parent="Planets" index="1" instance=ExtResource("7_benhx")]
-transform = Transform3D(309.096, 0, 221.041, 0, 380, 0, -221.041, 0, 309.096, -11.8906, 630.52, 906.187)
+transform = Transform3D(253.224, 0, 283.332, 0, 380, 0, -283.332, 0, 253.224, -11.8906, 630.52, 906.187)
 
 [node name="PlanetGaseous" parent="Planets" index="2" instance=ExtResource("8_yewjq")]
-transform = Transform3D(570.976, 0, 560.346, 0, 800, 0, -560.346, 0, 570.976, -1884.36, 648.349, -1238.61)
+transform = Transform3D(396.797, 0, 694.661, 0, 800, 0, -694.661, 0, 396.797, -1884.36, 648.349, -1238.61)
 skeleton = NodePath("../..")
 
 [node name="PlanetTerrestrial" parent="Planets" index="3" instance=ExtResource("2_to5o3")]
-transform = Transform3D(325.365, 0, 232.675, 0, 400, 0, -232.675, 0, 325.365, 163.604, 540.556, -980.931)
+transform = Transform3D(266.552, 0, 298.245, 0, 400, 0, -298.245, 0, 266.552, 163.604, 540.556, -980.931)
