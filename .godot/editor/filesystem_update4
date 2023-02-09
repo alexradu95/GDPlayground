@@ -4,3 +4,9 @@ res://modules/gridmap/voxels/terrain_cubes.tres
 res://addons/naejimer_3d_planet_generator/noises/planet_no_atmosphere.tres
 res://addons/naejimer_3d_planet_generator/noises/planet_ice.tres
 res://addons/naejimer_3d_planet_generator/noises/planet_gaseous.tres
+res://assets/i18n/translation.en.translation
+res://assets/i18n/translation.de.translation
+res://modules/main_menu/MainMenuScene.tscn
+res://addons/naejimer_3d_planet_generator/noises/planet_lava.tres
+res://addons/naejimer_3d_planet_generator/noises/planet_sand.tres
+res://addons/naejimer_3d_planet_generator/noises/star.tres
