@@ -1,13 +1,1 @@
-res://modules/main_menu/MainMenuScene.tscn
-res://modules/ui/theme.tres
-res://modules/gridmap/voxels/terrain_cubes.tres
-res://addons/naejimer_3d_planet_generator/noises/planet_no_atmosphere.tres
-res://addons/naejimer_3d_planet_generator/noises/planet_ice.tres
-res://addons/naejimer_3d_planet_generator/noises/planet_gaseous.tres
-res://modules/ui/overlays/PauseOverlay.gd
-res://assets/i18n/translation.en.translation
-res://assets/i18n/translation.de.translation
-res://modules/ui/overlays/PauseOverlay.tscn
-res://modules/base_scene/base_scene.tscn
-res://scenes/level_000.tscn
-res://scenes/apartment/apartment.tscn
+res://scenes/HandTracking.tscn
