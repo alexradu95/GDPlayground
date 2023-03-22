@@ -1,3 +1,9 @@
+XRController3D
+PhysicalBone3D
+Skeleton3D
+OpenXRHand
+XRCamera3D
+XROrigin3D
 Camera3D
 MeshInstance3D
 Node

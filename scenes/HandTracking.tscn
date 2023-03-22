@@ -1,12 +1,62 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5q0q54nrj0at"]
+[gd_scene load_steps=8 format=3 uid="uid://c5q0q54nrj0at"]
+
+[ext_resource type="PackedScene" uid="uid://cve0u5nsuqb0e" path="res://modules/valve_hand_models/left_hand.glb" id="1_8mdlh"]
+[ext_resource type="Script" path="res://scenes/HandTracking.gd" id="1_lwcne"]
+[ext_resource type="PackedScene" uid="uid://ct3j46htpp2ib" path="res://modules/valve_hand_models/right_hand.glb" id="2_f544s"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xisbu"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_tyhrg"]
+sky_material = SubResource("ProceduralSkyMaterial_xisbu")
+
+[sub_resource type="Environment" id="Environment_b8gki"]
+background_mode = 2
+sky = SubResource("Sky_tyhrg")
+tonemap_mode = 2
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_k327d"]
 size = Vector2(20, 20)
 
 [node name="HandTracking" type="Node3D"]
+script = ExtResource("1_lwcne")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_b8gki")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_k327d")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.65759, 11.5273)
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.05757, 2.58955)
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+
+[node name="LeftHand" type="OpenXRHand" parent="XROrigin3D"]
+hand_skeleton = NodePath("HandModel/Armature001/Skeleton3D")
+
+[node name="HandModel" parent="XROrigin3D/LeftHand" instance=ExtResource("1_8mdlh")]
+
+[node name="RightHand" type="OpenXRHand" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+hand = 1
+hand_skeleton = NodePath("HandModel/Armature/Skeleton3D")
+
+[node name="HandModel" parent="XROrigin3D/RightHand" instance=ExtResource("2_f544s")]
+
+[node name="LeftController" type="XRController3D" parent="XROrigin3D"]
+tracker = &"left_hand"
+
+[node name="LeftHandController" parent="XROrigin3D/LeftController" instance=ExtResource("1_8mdlh")]
+
+[node name="RightController" type="XRController3D" parent="XROrigin3D"]
+tracker = &"right_hand"
+
+[node name="RightHandController" parent="XROrigin3D/RightController" instance=ExtResource("2_f544s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[editable path="XROrigin3D/LeftHand/HandModel"]
+[editable path="XROrigin3D/RightHand/HandModel"]
+[editable path="XROrigin3D/LeftController/LeftHandController"]
+[editable path="XROrigin3D/RightController/RightHandController"]
