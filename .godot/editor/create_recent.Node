@@ -1,3 +1,4 @@
+Camera3D
 MeshInstance3D
 Node
 Button
@@ -10,6 +11,5 @@ Label3D
 CSGMesh3D
 TextureRect
 BoxContainer
-Camera3D
 CharacterBody3D
 HBoxContainer
