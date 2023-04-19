@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bo7srmdyv22hq"]
+
+[ext_resource type="Script" path="res://modules/xr_player/hand-gesture-recognition/scripts/hand_pose_recognition.gd" id="1_qilig"]
+
+[node name="HandPoseRecognition" type="Node"]
+script = ExtResource("1_qilig")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

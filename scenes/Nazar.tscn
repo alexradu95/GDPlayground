@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bceeo6mncgqj2"]
+
+[ext_resource type="PackedScene" uid="uid://2dpxuqyug48n" path="res://modules/xr_player/XROrigin.tscn" id="1_2tygx"]
+
+[node name="Nazar" type="Node3D"]
+
+[node name="XROrigin3D" parent="." instance=ExtResource("1_2tygx")]
+
+[editable path="XROrigin3D"]

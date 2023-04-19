@@ -1,9 +1,10 @@
+Label3D
+Node
+MeshInstance3D
 Area3D
 CollisionShape3D
 Node3D
 CSGBox3D
-MeshInstance3D
-Label3D
 CSGMesh3D
 TextureRect
 BoxContainer
@@ -11,4 +12,3 @@ Camera3D
 CharacterBody3D
 Button
 HBoxContainer
-Node
