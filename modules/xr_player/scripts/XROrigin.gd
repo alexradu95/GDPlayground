@@ -12,7 +12,7 @@ func _ready():
 
 		# Change our main viewport to output to the HMD
 		get_viewport().use_xr = true
-		enable_passthrough()
+		# enable_passthrough()
 	else:
 		print("OpenXR not initialised, please check if your headset is connected")
 		

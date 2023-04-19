@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://2dpxuqyug48n"]
+[gd_scene load_steps=10 format=3 uid="uid://c78ndvf0n0pko"]
 
-[ext_resource type="Script" path="res://modules/xr_player/XROrigin.gd" id="1_8g214"]
+[ext_resource type="Script" path="res://modules/xr_player/scripts/XROrigin.gd" id="1_qlfg8"]
+[ext_resource type="Script" path="res://modules/xr_player/scripts/xr_syncronized_skeleton.gd" id="2_b2kqb"]
 [ext_resource type="PackedScene" uid="uid://bo7srmdyv22hq" path="res://modules/xr_player/hand-gesture-recognition/scenes/hand_pose_recognition.tscn" id="2_wtyrd"]
-[ext_resource type="Script" path="res://addons/scripts/smooth_open_xr_hand.gd" id="2_xkk2j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_esgx5"]
 transparency = 1
@@ -216,13 +216,14 @@ bind/25/pose = Transform3D(0.083606, -0.0165156, 0.996362, 0.97618, 0.20224, -0.
 
 [node name="XROrigin3D" type="XROrigin3D"]
 current = true
-script = ExtResource("1_8g214")
+script = ExtResource("1_qlfg8")
 
 [node name="Camera3D" type="XRCamera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 current = true
 
 [node name="Left_Controller" type="XRController3D" parent="."]
+visible = false
 tracker = &"left_hand"
 
 [node name="Left_Controller_Skeleton" type="Skeleton3D" parent="Left_Controller"]
@@ -779,7 +780,7 @@ bones/25/enabled = true
 bones/25/position = Vector3(0.0082902, 0.00927313, -0.0510244)
 bones/25/rotation = Quaternion(0.101224, -0.0124619, -0.0407884, 0.993949)
 bones/25/scale = Vector3(1, 1, 1)
-script = ExtResource("2_xkk2j")
+script = ExtResource("2_b2kqb")
 xr_origin = NodePath("..")
 source_skeleton = NodePath("../Left_HandTracking/Left_HandTracking_Skeleton")
 
@@ -799,6 +800,7 @@ debug_label = NodePath("../Left_HandPoseRecognitionLabel")
 skeleton = NodePath("..")
 
 [node name="Right_Controller" type="XRController3D" parent="."]
+visible = false
 tracker = &"right_hand"
 
 [node name="Right_Controller_Skeleton" type="Skeleton3D" parent="Right_Controller"]
@@ -1356,7 +1358,7 @@ bones/25/enabled = true
 bones/25/position = Vector3(-0.00829025, 0.00927338, -0.0510245)
 bones/25/rotation = Quaternion(0.101224, 0.012462, 0.0407884, 0.993949)
 bones/25/scale = Vector3(1, 1, 1)
-script = ExtResource("2_xkk2j")
+script = ExtResource("2_b2kqb")
 xr_origin = NodePath("..")
 source_skeleton = NodePath("../Right_HandTracking/Right_HandTracking_Skeleton")
 
