@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="alexradu.net"
-run/main_scene="res://MenuScene.tscn"
+run/main_scene="res://scenes/MenuScene.tscn"
 config/features=PackedStringArray("4.0")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="res://settings/default_bus_layout.tres"
 
 [autoload]
 
@@ -112,4 +116,5 @@ environment/defaults/default_clear_color=Color(0.211765, 0.239216, 0.321569, 1)
 [xr]
 
 openxr/enabled=true
+openxr/default_action_map="res://settings/openxr_action_map.tres"
 shaders/enabled=true
