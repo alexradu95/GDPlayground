@@ -1,18 +1,64 @@
-[gd_scene format=3 uid="uid://blk46ce6gu03e"]
+[gd_scene load_steps=8 format=3 uid="uid://blk46ce6gu03e"]
 
-[node name="MenuScene" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://ctltchlf2j2r4" path="res://addons/xr-simulator/XRSimulator.tscn" id="1_7fn6y"]
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ssi2b"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[node name="Label" type="Label" parent="Control"]
-layout_mode = 0
-offset_right = 573.0
-offset_bottom = 205.0
-text = "Welcome to my Laboratory !!!
-https://alexradu.net 🌎"
-horizontal_alignment = 1
-vertical_alignment = 1
+[sub_resource type="Sky" id="Sky_facmo"]
+sky_material = SubResource("ProceduralSkyMaterial_ssi2b")
+
+[sub_resource type="Environment" id="Environment_vqyyy"]
+background_mode = 2
+sky = SubResource("Sky_facmo")
+tonemap_mode = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_q6840"]
+size = Vector2(10, 10)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_p5fqc"]
+points = PackedVector3Array(-5, 0, -5, -5, 0, 5, 5, 0, -5, 5, 0, 5)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_r73p6"]
+radius = 0.05
+height = 0.1
+
+[node name="MenuScene" type="Node3D"]
+
+[node name="XRSimulator" parent="." instance=ExtResource("1_7fn6y")]
+xr_origin = NodePath("../XROrigin3D")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vqyyy")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+mesh = SubResource("PlaneMesh_q6840")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("ConvexPolygonShape3D_p5fqc")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56075, 0)
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+
+[node name="LeftController" type="XRController3D" parent="XROrigin3D"]
+tracker = &"left_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftController"]
+mesh = SubResource("CapsuleMesh_r73p6")
+
+[node name="RightController" type="XRController3D" parent="XROrigin3D"]
+tracker = &"right_hand"
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="XROrigin3D/RightController"]
+mesh = SubResource("CapsuleMesh_r73p6")
+skeleton = NodePath("../../LeftController")

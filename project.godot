@@ -22,6 +22,7 @@ buses/default_bus_layout="res://settings/default_bus_layout.tres"
 [autoload]
 
 UserSettings="*res://modules/settings/UserSettings.gd"
+XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
 
 [display]
 
@@ -36,9 +37,14 @@ window/stretch/aspect="keep_height"
 
 project/assembly_name="alexradu.net"
 
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
+
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 
 [gui]
 

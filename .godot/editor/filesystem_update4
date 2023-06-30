@@ -1,5 +1,1 @@
-res://scenes/Nazar.tscn
-res://modules/xr_player/hand-gesture-recognition/scenes/hand_pose_save.tscn
-res://modules/xr_player/XROrigin.tscn
-res://MenuScene.tscn
 res://scenes/MenuScene.tscn
