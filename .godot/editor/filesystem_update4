@@ -1,10 +1,4 @@
-res://modules/xr_player/XROrigin.tscn
-res://addons/scripts/smooth_open_xr_hand.gd
-res://modules/xr_player/hand-gesture-recognition/scripts/hand_pose_recognition.gd
 res://scenes/Nazar.tscn
-res://modules/xr_player/hand-gesture-recognition/scenes/hand_pose_recognition.tscn
-res://modules/xr_player/scripts/smooth_open_xr_hand.gd
-res://modules/xr_player/scripts/xr_syncronized_skeleton.gd
 res://modules/xr_player/hand-gesture-recognition/scenes/hand_pose_save.tscn
-res://modules/xr_player/scripts/XROrigin.gd
-res://modules/xr_player/hand-gesture-recognition/hand_pose_templates.json
+res://modules/xr_player/XROrigin.tscn
+res://MenuScene.tscn

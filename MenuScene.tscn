@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://blk46ce6gu03e"]
+
+[node name="MenuScene" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 573.0
+offset_bottom = 205.0
+text = "Welcome to my Laboratory !!!
+https://alexradu.net 🌎"
+horizontal_alignment = 1
+vertical_alignment = 1
